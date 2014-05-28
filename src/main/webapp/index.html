@@ -1,19 +1,47 @@
 <!doctype html>
-<html lang="en" ng-app="phonecatApp">
+<html ng-app="plunker">
 <head>
-    <meta charset="utf-8">
-    <title>Google Phone Gallery</title>
+
     <script src="lib/angular.js"></script>
-    <script src="app/controllers.js"></script>
+    <script src="lib/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="example.js"></script>
+
+    <link href="lib/bootstrap.min.css" rel="stylesheet">
+
 </head>
-<body ng-controller="PhoneListCtrl">
+<body>
 
-<ul>
-    <li ng-repeat="phone in phones">
-        {{phone.name}}
-        <p>{{phone.snippet}}</p>
-    </li>
-</ul>
+<div ng-controller="TabsDemoCtrl">
 
+    <li>This is job portal written by programmer for programmers and companies</li>
+    <li>lorem ipsum</li>
+    <li>lorem ipsum lorem ipsum lorem ipsum</li>
+    <li>lorem ipsum lorem ipsum lorem ipsum</li>
+
+
+    <tabset justified="true">
+        <tab heading="Employee">
+            <li>If you are looking for job register <a href="emplRegister.html">here</a></li>
+            <li>lorem ipsum</li>
+            <li>lorem ipsum lorem ipsum lorem ipsum</li>
+            <li>lorem ipsum lorem ipsum lorem ipsum</li>
+
+        </tab>
+        <tab heading="Employer">
+            <li>If you are offering job register here<a href="compRegister.html">here</a></li></li>
+            <li>lorem ipsum</li>
+            <li>lorem ipsum lorem ipsum lorem ipsum</li>
+            <li>lorem ipsum lorem ipsum lorem ipsum</li>
+
+        </tab>
+        <tab heading="Contributor">
+            <li>If you have any ideas how to improve this portal continue reading</li>
+            <li>This project is open source and can be found on github here</li>
+            <li>lorem ipsum lorem ipsum lorem ipsum</li>
+            <li>lorem ipsum lorem ipsum lorem ipsum</li>
+
+        </tab>
+    </tabset>
+</div>
 </body>
 </html>

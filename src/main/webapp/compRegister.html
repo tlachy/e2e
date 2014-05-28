@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="plunker">
+<head>
+
+    <script src="lib/angular.js"></script>
+    <script src="lib/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="example.js"></script>
+
+    <link href="lib/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div ng-controller="TabsDemoCtrl">
+
+    <li>This is job portal written by programmer for programmers and companies</li>
+    <li>lorem ipsum</li>
+    <li>lorem ipsum lorem ipsum lorem ipsum</li>
+    <li>lorem ipsum lorem ipsum lorem ipsum</li>
+    <hr/>
+
+    <table border="1" cellpadding="10">
+        <tbody>
+        <tr ng-repeat="(rowIndex, row) in searchConditions">
+            <td ng-repeat="searchCondition in row">
+                <button type="button" ng-click="openConditionDialog(rowIndex,$index)">{{searchCondition.name}}</button>
+                <button type="button" ng-click="removeCondition(rowIndex,$index)">X</button>
+            </td>
+            <td>
+                <button type="button" ng-click="addCondition(rowIndex)">Add condition</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button type="button" ng-click="addRow()">ADD ROW</button>
+
+</div>
+</body>
+</html>
