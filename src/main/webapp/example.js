@@ -1,6 +1,6 @@
 angular.module('plunker', ['ui.bootstrap']);
 
-var TabsDemoCtrl = function ($scope) {
+var TabsDemoCtrl = function ($scope, $modal, $log) {
 
   $scope.tabs = [
     { title:"Dynamic Title 1", content:"Dynamic content 1" },
@@ -14,9 +14,6 @@ var TabsDemoCtrl = function ($scope) {
   };
 
   $scope.navType = 'pills';
-
-
-
 
   $scope.searchConditions = [
       [{name:'Jon', age: 30, title: 'Developer'}, {name:'Jon', age: 30, title: 'Developer'}, {name:'Jon', age: 30, title: 'Developer'}],
@@ -41,5 +38,55 @@ var TabsDemoCtrl = function ($scope) {
         $scope.searchConditions[rowIndex].push({name:'new', age: 50, title: 'CEO'});
   };
 
+  $scope.options = [
+        { label: 'one', value: 1 },
+        { label: 'two', value: 2 }
+    ];
 
+  $scope.correctlySelected = $scope.options[1];
+
+  $scope.openConditionDialog = function(x,y,z){
+        console.log($scope.searchConditions[x][y]);
+        console.log(z);
+        var size = 2;
+
+        var modalInstance = $modal.open({
+                templateUrl: 'myModalContent.html',
+                controller: ModalInstanceCtrl,
+                size: size,
+                resolve: {
+                  items: function () {
+                    return $scope.items;
+                  }
+                }
+              });
+
+              modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
+              }, function () {
+                $log.info('Modal dismissed at: ' + new Date());
+              });
+  };
+
+  $scope.items = ['item1', 'item2', 'item3'];
+};
+
+// Please note that $modalInstance represents a modal window (instance) dependency.
+// It is not the same as the $modal service used above.
+
+var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
+
+  $scope.items = items;
+
+  $scope.selected = {
+    item: $scope.items[0]
+  };
+
+  $scope.ok = function () {
+    $modalInstance.close($scope.selected.item);
+  };
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
 };
