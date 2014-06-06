@@ -39,9 +39,24 @@ var TabsDemoCtrl = function ($scope, $modal, $log) {
   };
 
   $scope.options = [
-        { label: 'one', value: 1 },
-        { label: 'two', value: 2 }
+        { label: 'Location', value: 1 },
+        { label: 'Skill', value: 2 },
+        { label: 'Years of Experience', value: 3 },
+        { label: 'Age', value: 4 },
+        { label: 'Salary', value: 5 },
+        { label: 'MistoVykonuPrace', value: 6 },
+        { label: 'DruhVztahu', value: 7 },
+        { label: 'Disabled', value: 8 },
+        { label: 'Lang', value: 9 },
+        { label: 'Availability', value: 9 },
+        { label: 'WillingToWorkForBank', value: 9 },
+        { label: 'WillingToWorkForTravel', value: 9 },
+        { label: 'Religion', value: 9 },
+        { label: 'Orientation', value: 9 },
+        { label: 'Gendre', value: 9 }
     ];
+
+    // u opacneho hledani klima
 
   $scope.correctlySelected = $scope.options[1];
 
