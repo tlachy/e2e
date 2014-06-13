@@ -17,8 +17,6 @@
     <div>header</div>
     <div id="interviewWidget">
 
-
-<!--jkj-->
 		<div id="interviewPhases">
 			<span ng-repeat="phase in phases"> <!-- after div there is linebreak thus span used-->
 				<button class="phase" >{{phase}}</button>
@@ -26,10 +24,8 @@
 			</span>
 		</div>
 		<div id="applicants">
-			<button class="applicant" ng-repeat="group in applicantGroups"></button>
+			<button class="applicant" ng-mouseover="showApplicantsGroup(group)" ng-repeat="group in applicantGroups"></button>
 		</div>
-
-
 
     </div>
     <div>footer</div>
