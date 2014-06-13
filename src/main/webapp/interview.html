@@ -12,28 +12,28 @@
 </head>
 <body>
 
-<div ng-controller="TabsDemoCtrl">
+<div ng-controller="interviewControler">
 
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
+    <div>header</div>
+    <div id="interviewWidget">
 
-    <div id="box">
 
-        <canvas id="mycanvas" width="${screen.width}" height="200"></canvas>
-
-        <div id="applicants">
-            <button class="round-button" type="button">Alex</button>
-        </div>
+<!--jkj-->
+		<div id="interviewPhases">
+			<span ng-repeat="phase in phases"> <!-- after div there is linebreak thus span used-->
+				<button class="phase" >{{phase}}</button>
+				<button ng-hide="$last" class="separator" >|</button> <!--replace with nice image -->
+			</span>
+		</div>
+		<div id="applicants">
+			<button class="applicant" ng-repeat="group in applicantGroups"></button>
+		</div>
 
 
 
     </div>
-    <div>after</div>
+    <div>footer</div>
+    <br/>
 
 
 </div>

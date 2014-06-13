@@ -1,40 +1,78 @@
-
-
-#box {
+#interviewWidget {
     position: relative;
+    width:100%;
     height:300px;
+    float: left;
 }
 
 #applicants {
     position: absolute;
     top: 0px;
-    left: 200px;
+    left: 0px;
 }
 
-#mycanvas {
+#interviewPhases {
     position: absolute;
     top: 0px;
     left: 0px;
 }
 
-
-
-.round-button {
-    display:block;
-    width:50px;
-    height:50px;
-    line-height:50px;
-    border: 2px solid #f5f5f5;
-    border-radius: 40%;
-    color:#f5f5f5;
-    text-align:center;
-    text-decoration:none;
-    background: #464646;
-    box-shadow: 0 0 3px gray;
-    font-size:20px;
-    font-weight:bold;
+.applicant {
+	-moz-box-shadow:inset 0px 1px 0px -1px #fceaca;
+	-webkit-box-shadow:inset 0px 1px 0px -1px #fceaca;
+	box-shadow:inset 0px 1px 0px -1px #fceaca;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffce79), color-stop(1, #eeaf41) );
+	background:-moz-linear-gradient( center top, #ffce79 5%, #eeaf41 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffce79', endColorstr='#eeaf41');
+	background-color:#ffce79;
+	-webkit-border-top-left-radius:42px;
+	-moz-border-radius-topleft:42px;
+	border-top-left-radius:42px;
+	-webkit-border-top-right-radius:42px;
+	-moz-border-radius-topright:42px;
+	border-top-right-radius:42px;
+	-webkit-border-bottom-right-radius:42px;
+	-moz-border-radius-bottomright:42px;
+	border-bottom-right-radius:42px;
+	-webkit-border-bottom-left-radius:42px;
+	-moz-border-radius-bottomleft:42px;
+	border-bottom-left-radius:42px;
+	text-indent:0;
+	border:2px solid #eeb44f;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:30px;
+	line-height:30px;
+	width:30px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #ce8e28;
+	opacity:0.6;
 }
-.round-button:hover {
-    background: #262626;
+.applicant:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #eeaf41), color-stop(1, #ffce79) );
+	background:-moz-linear-gradient( center top, #eeaf41 5%, #ffce79 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeaf41', endColorstr='#ffce79');
+	background-color:#eeaf41;
+}.applicant:active {
+	position:relative;
+	top:1px;
+}
+
+
+.phase{
+    width: 250px;
+    height: 20px;
+    border: none;
+    text-align: center;
+    font-size: 13px;
+    z-index: 1001;
+}
+.phase:hover{
     border: 2px solid #f50000;
 }
+
