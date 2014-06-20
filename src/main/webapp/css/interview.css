@@ -18,6 +18,7 @@
 }
 
 .applicant {
+    position: absolute;
 	-moz-box-shadow:inset 0px 1px 0px -1px #fceaca;
 	-webkit-box-shadow:inset 0px 1px 0px -1px #fceaca;
 	box-shadow:inset 0px 1px 0px -1px #fceaca;

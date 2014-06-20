@@ -58,7 +58,7 @@ var TabsDemoCtrl = function ($scope, $modal, $log) {
         { label: 'Gendre', value: 9 }
     ];
 
-    // u opacneho hledani klima
+    // u opacneho hledani klimatizace
 
   $scope.correctlySelected = $scope.options[1];
 

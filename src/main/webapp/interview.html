@@ -14,20 +14,31 @@
 
 <div ng-controller="interviewControler">
 
-    <div>header</div>
-    <div id="interviewWidget">
+    <div style="font-size: xx-large;">{{interview.interviewName}}</div>
+	<div style="font-size: x-large;">{{interview.interviewDesc}}</div>
+	<div > Status: {{interview.status}}</div>
+	</br>
+	<div style="font-size: large;">Open for applying from {{interview.startDate}} to {{interview.endDate}}</div>
+
+	<div id="interviewWidget">
 
 		<div id="interviewPhases">
 			<span ng-repeat="phase in phases"> <!-- after div there is linebreak thus span used-->
-				<button class="phase" >{{phase}}</button>
+				<button id="phase{{$index}}" class="phase" >{{phase}}</button>
 				<button ng-hide="$last" class="separator" >|</button> <!--replace with nice image -->
 			</span>
 		</div>
 		<div id="applicants">
-			<button class="applicant" ng-mouseover="showApplicantsGroup(group)" ng-repeat="group in applicantGroups"></button>
+			<button id="applicantGroup{{rowIndex}}" style="left:{{getPosition(rowIndex)}}" class="applicant" ng-mouseover="showApplicantsGroup(group)" ng-mouseenter="mark(rowIndex)" ng-repeat="(rowIndex, group) in applicantGroups"></button>
 		</div>
-
     </div>
+
+	<div id="selectedApplicants" ng-repeat="applicant in selectedApplicants">
+		<label>{{applicant.personId}}</label>
+		<button>moveToNextPhase</button>
+		<button>moveToPreviousPhase</button>
+	</div>
+
     <div>footer</div>
     <br/>
 
