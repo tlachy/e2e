@@ -1,7 +1,9 @@
 .form-signin {
   max-width: 330px;
   padding: 15px;
-  margin: 0 auto;
+  float: right;
+  margin-right: 300px;
+
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
@@ -59,6 +61,11 @@
     color: black;
 }
 
+.nevim{
+    margin-left: 50px;
+
+
+}
 /*  not working don't know why
 .nav-tabs.nav-justified>.active>a:hover{
     color: black;
