@@ -55,10 +55,10 @@
 	opacity:0.6;
 }
 .applicant:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #eeaf41), color-stop(1, #ffce79) );
-	background:-moz-linear-gradient( center top, #eeaf41 5%, #ffce79 100% );
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00af41), color-stop(1, #ffce79) );
+	background:-moz-linear-gradient( center top, #00af41 5%, #ffce79 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeaf41', endColorstr='#ffce79');
-	background-color:#eeaf41;
+	color:#00af41;
 }.applicant:active {
 	position:relative;
 	top:1px;

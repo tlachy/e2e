@@ -1,4 +1,31 @@
-angular.module('plunker', ['ui.bootstrap']);
+/* Directives */
+angular.module('myApp.directives', [])
+    .directive('repeatHelloWorld', ['$timeout', function (timer) {
+    return {
+        link: function (scope, elem, attrs, ctrl) {
+
+            var hello = function () {
+
+                $scope.applicantGroups
+
+                var phaseElement = document.getElementById("phase"+groupIndex);
+                var interviewPhase = $scope.applicantGroups[groupIndex][0].interviewPhase;
+                var width = phaseElement.getBoundingClientRect().getBoundingClientRect().width;
+                var distanceFromLeft = phaseElement.getBoundingClientRect().getBoundingClientRect().left;
+
+                var positionOfGroupInPhase = $scope.positionOfGroupInPhase[groupIndex];
+                (250 * interviewPhase)
+                return (250 * interviewPhase)+"px";
+
+            }
+
+             timer(hello, 0);
+
+        }
+    }
+}]);
+
+angular.module('plunker', ['ui.bootstrap', 'myApp.directives']);
 
 var interviewControler = function ($scope, $modal, $log) {
     $scope.interview = {interviewId:5,
@@ -56,17 +83,37 @@ var interviewControler = function ($scope, $modal, $log) {
         }
     };
 
-    $scope.getPosition = function(groupIndex){
-            //var phaseElement = document.getElementById("phase"+groupIndex);
-            var interviewPhase = $scope.applicantGroups[groupIndex][0].interviewPhase;
-            //var width = phaseElement.getBoundingClientRect().getBoundingClientRect().width;
-            //var distanceFromLeft = phaseElement.getBoundingClientRect().getBoundingClientRect().left;
+//    $scope.getPosition = function(groupIndex){
+//            //var phaseElement = document.getElementById("phase"+groupIndex);
+//            var interviewPhase = $scope.applicantGroups[groupIndex][0].interviewPhase;
+//            //var width = phaseElement.getBoundingClientRect().getBoundingClientRect().width;
+//            //var distanceFromLeft = phaseElement.getBoundingClientRect().getBoundingClientRect().left;
+//
+//            var positionOfGroupInPhase = $scope.positionOfGroupInPhase[groupIndex];
+//            (250 * interviewPhase)
+//            return (250 * interviewPhase)+"px";
+//    };
 
-            var positionOfGroupInPhase = $scope.positionOfGroupInPhase[groupIndex];
-            (250 * interviewPhase)
-            return (250 * interviewPhase)+"px";
+    $scope.listAllApplicants = function(){
+        $scope.selectedApplicants = applicants;
     };
 
+    $scope.highlightApplicantGroup = function(applicant){
+
+        angular.forEach($scope.applicantGroups, function(applicantGroup, index) {
+
+            if(applicantGroup.contains(applicant)){
+                //document.getElementById("applicantGroup" + index).style.color = blue;
+            }
+
+        });
+
+    };
+
+    $scope.$on('$viewContentLoaded', function()
+        {
+            alert("blah");
+        });
 };
 
 var createApplicantGroups = function(applicants, limitOfApplicantsInOnePhase, positionOfGroupInPhase){
@@ -102,3 +149,7 @@ var createApplicantGroups = function(applicants, limitOfApplicantsInOnePhase, po
 
     return applicantGroups;
 }
+
+var positionApplicants = function(){
+    console.log("neco jfkdlkfdk");
+};
