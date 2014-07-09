@@ -65,28 +65,37 @@
 		</ul>
 	</div>
 
-	<!-- Jumbotron -->
-	<div class="jumbotron" ng-app="plunker">
+	<div  ng-app="plunker">
+
+		<br/>
+		<br/>
 
 		<div ng-controller="SearchController">
 
-			<table border="1" cellpadding="10">
+			<table cellpadding="10">
 				<tbody>
 				<tr ng-repeat="(rowIndex, row) in searchConditions">
-					<td ng-repeat="searchCondition in row">
+					<td  ng-repeat="searchCondition in row">
 						<select ng-model="correctlySelected" ng-options="opt as opt.label for opt in options"
 								ng-change="openConditionDialog(rowIndex,$index,correctlySelected)"></select>
-						<button type="button">{{searchCondition.name}}</button>
-						<button type="button" ng-click="removeCondition(rowIndex,$index)">X</button>
+						<button class="btn" type="button">{{searchCondition.name}}</button>
+						<button ng-click="removeCondition(rowIndex,$index)" style="
+						width: 25px;
+    					height: 25px;
+    					border:none;
+    					background-image: url(../../picture/red_cross.png);
+    					background-repeat: no-repeat;
+    					background-size: contain;"></button>
 					</td>
 					<td>
-						<button type="button" ng-click="addCondition(rowIndex)">Add condition</button>
+						<button type="button" class="btn btn-success" ng-click="addCondition(rowIndex)">Add condition</button>
 					</td>
+
 				</tr>
 				</tbody>
 			</table>
 
-			<button type="button" ng-click="addRow()">ADD ROW</button>
+			<button class="btn btn-success" type="button" ng-click="addRow()">ADD ROW</button>
 
 			</br>
 			</br>
