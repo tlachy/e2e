@@ -72,26 +72,41 @@
 
 		<div ng-controller="SearchController">
 
-			<table cellpadding="10">
+			<table class="searchConditionTable">
 				<tbody>
-				<tr ng-repeat="(rowIndex, row) in searchConditions">
-					<td  ng-repeat="searchCondition in row">
+				<tr ng-repeat-start="(rowIndex, row) in searchConditions">
+					<td  ng-repeat-start="searchCondition in row" class="searchConditionCell">
 						<select ng-model="correctlySelected" ng-options="opt as opt.label for opt in options"
 								ng-change="openConditionDialog(rowIndex,$index,correctlySelected)"></select>
 						<button class="btn" type="button">{{searchCondition.name}}</button>
-						<button ng-click="removeCondition(rowIndex,$index)" style="
-						width: 25px;
-    					height: 25px;
-    					border:none;
-    					background-image: url(../../picture/red_cross.png);
-    					background-repeat: no-repeat;
-    					background-size: contain;"></button>
+						<button ng-click="removeCondition(rowIndex,$index)" style="width: 25px; height: 25px; border:none; background-image: url(../../picture/red_cross.png); background-repeat: no-repeat;background-size: contain;"></button>
 					</td>
+					<td ng-repeat-end ng-hide="$last">
+						<button style="
+						background-color: transparent;
+						font-weight: 900;
+						margin: -5px;
+						height: 100%;
+						border: none;
+						color: #47a447;
+						">OR</button>
+					</td>
+
 					<td>
-						<button type="button" class="btn btn-success" ng-click="addCondition(rowIndex)">Add condition</button>
+						<button type="button" class="btn btn-success" ng-click="addCondition(rowIndex)">Add</button>
 					</td>
 
 				</tr>
+				<tr ng-repeat-end ng-hide="$last">
+					<td colspan="20" style="
+background-color: red;
+text-align: center;
+color: white;
+font-weight: 900;
+border-radius: 20px;
+					">AND</td>
+				</tr>
+
 				</tbody>
 			</table>
 
@@ -99,6 +114,9 @@
 
 			</br>
 			</br>
+			<p><a class="btn btn-lg btn-success" href="#" role="button">Search</a></p>
+			<p><a class="btn btn-lg btn-success" href="#" role="button">Create interview</a></p>
+
 
 			<script type="text/ng-template" id="myModalContent.html">
 				<div class="modal-header">
