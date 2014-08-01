@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
+	<link rel="icon" href="../../favicon.ico">
 
 	<title>Interview</title>
 
@@ -16,8 +17,7 @@
 	<link href="../../css/justified-nav.css" rel="stylesheet">
 
 	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-	<!--[if lt IE 9]>
-	<script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 	<script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -32,7 +32,6 @@
 	<script src="../../lib/angular.js"></script>
 	<script src="../../lib/ui-bootstrap-tpls-0.10.0.js"></script>
 	<script src="../../app/employeeView.js"></script>
-
 </head>
 
 <body>
@@ -58,17 +57,51 @@
 
 	<div class="masthead">
 		<ul class="nav nav-justified">
-			<li><a href="./profile.html">PROFILE</a></li>
-			<li class="active"><a href="#">CREATE INTERVIEW / SEARCH</a></li>
+			<li class="active"><a href="./profile.html">PROFILE</a></li>
+			<li><a href="./search_interview.html">SEARCH FOR INTERVIEW</a></li>
 			<li><a href="./interviews.html">INTERVIEWS</a></li>
-			<li><a href="./tests.html">TESTS</a></li>
 		</ul>
 	</div>
 
-	<div ng-app="plunker">
+	<!-- Jumbotron -->
+	<div class="jumbotron" ng-app="plunker">
 
-		<br/>
-		<br/>
+		<h2>Status:</h2>OK
+		<h2>Verification:</h2>DONE
+
+
+		<h2>Personal Details:</h2>
+		<form class="" role="form">
+			<div class="form-group">
+				<input type="text" placeholder="First Name" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="text" placeholder="Last Name" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="text" placeholder="Date Of Born" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="text" placeholder="Nationality" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="text" placeholder="Gender" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="text" placeholder="Religion" class="form-control">
+			</div>
+			<button type="submit" class="btn btn-success">Change</button>
+		</form>
+
+		<h2>Employment history:</h2>
+		Company name (how long he was there in months calculated)
+		role, leading role|executive role|regular, from, to, project, working language, desc, technologies
+		role, leading role|executive role|regular, from, to, project, working language, desc, , technologies
+
+		Company name (how long he was there in months calculated)
+		role, leading role|executive role|regular, from, to, project, working language, desc, , technologies
+
+		<h2>Job preferences:</h2> (tooltip: if companies look for empl this are taken into account)
 
 		<div ng-controller="SearchController">
 
@@ -150,7 +183,9 @@ border-radius: 20px;
 
 		</div>
 
+
 	</div>
+
 
 
 	<!-- Site footer -->
@@ -158,8 +193,7 @@ border-radius: 20px;
 		<p>&copy; Company 2014</p>
 	</div>
 
-</div>
-<!-- /container -->
+</div> <!-- /container -->
 
 
 <!-- Bootstrap core JavaScript

@@ -13,6 +13,8 @@ var TestsController = function ($scope, $modal, $log) {
 
 var SearchController = function ($scope, $modal, $log) {
 
+$scope.searchOrInterviewSwitcher = true;
+
 $scope.searchConditions = [
       [{name:'Jon', age: 30, title: 'Developer'}, {name:'Jon', age: 30, title: 'Developer'}, {name:'Jon', age: 30, title: 'Developer'}],
       [{name:'Mike', age: 37, title: 'Manager'}, {name:'Mike', age: 37, title: 'Manager'}],

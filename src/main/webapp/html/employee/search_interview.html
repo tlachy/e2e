@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
+	<link rel="icon" href="../../favicon.ico">
 
 	<title>Interview</title>
 
@@ -16,8 +17,7 @@
 	<link href="../../css/justified-nav.css" rel="stylesheet">
 
 	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-	<!--[if lt IE 9]>
-	<script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 	<script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -32,7 +32,6 @@
 	<script src="../../lib/angular.js"></script>
 	<script src="../../lib/ui-bootstrap-tpls-0.10.0.js"></script>
 	<script src="../../app/employeeView.js"></script>
-
 </head>
 
 <body>
@@ -59,16 +58,13 @@
 	<div class="masthead">
 		<ul class="nav nav-justified">
 			<li><a href="./profile.html">PROFILE</a></li>
-			<li class="active"><a href="#">CREATE INTERVIEW / SEARCH</a></li>
+			<li class="active"><a href="./search_interview.html">SEARCH FOR INTERVIEW</a></li>
 			<li><a href="./interviews.html">INTERVIEWS</a></li>
-			<li><a href="./tests.html">TESTS</a></li>
 		</ul>
 	</div>
 
-	<div ng-app="plunker">
-
-		<br/>
-		<br/>
+	<!-- Jumbotron -->
+	<div class="jumbotron" ng-app="plunker">
 
 		<div ng-controller="SearchController">
 
@@ -116,19 +112,10 @@ border-radius: 20px;
 			</br>
 
 
-			<p><a class="btn btn-lg btn-success" ng-click="searchOrInterviewSwitcher = true" href="#" role="button">Search</a></p>
-			<p><a class="btn btn-lg btn-success" ng-click="searchOrInterviewSwitcher = false" href="#" role="button">Create interview</a></p>
+			<p><a class="btn btn-lg btn-success" href="#" role="button">Search</a></p>
 
-			<hr>
-			<div collapse="! searchOrInterviewSwitcher">
-				<div>Search</div>
-			</div>
-			<div collapse=" searchOrInterviewSwitcher">
-				<div>Interview</div>
-			</div>
-
-
-
+			TABLE WITH SEARCH RESULTS
+			NAME, FROM, TO,
 
 			<script type="text/ng-template" id="myModalContent.html">
 				<div class="modal-header">
@@ -153,13 +140,13 @@ border-radius: 20px;
 	</div>
 
 
+
 	<!-- Site footer -->
 	<div class="footer">
 		<p>&copy; Company 2014</p>
 	</div>
 
-</div>
-<!-- /container -->
+</div> <!-- /container -->
 
 
 <!-- Bootstrap core JavaScript
