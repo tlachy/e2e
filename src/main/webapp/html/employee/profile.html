@@ -15,6 +15,8 @@
 
 	<!-- Custom styles for this template -->
 	<link href="../../css/justified-nav.css" rel="stylesheet">
+	<link href="../../css/search-create.css" rel="stylesheet">
+
 
 	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 	<!--[if lt IE 9]>
@@ -65,7 +67,7 @@
 	</div>
 
 	<!-- Jumbotron -->
-	<div class="jumbotron" ng-app="plunker">
+	<div ng-app="plunker">
 
 		<h2 style="float: right;">Status:</h2>OK
 		<h2 style="float: right;">Verification:</h2>DONE
@@ -111,65 +113,58 @@
 
 		<h2>Job preferences:</h2> (tooltip: if companies look for empl this are taken into account)
 
+
+
 		<div ng-controller="SearchController">
 
-			<table class="searchConditionTable">
-				<tbody>
-				<tr ng-repeat-start="(rowIndex, row) in searchConditions">
-					<td ng-repeat-start="searchCondition in row" class="searchConditionCell">
-						<select ng-model="correctlySelected" ng-options="opt as opt.label for opt in options"
-								ng-change="openConditionDialog(rowIndex,$index,correctlySelected)"></select>
-						<button class="btn" type="button">{{searchCondition.name}}</button>
-						<button ng-click="removeCondition(rowIndex,$index)"
-								style="width: 25px; height: 25px; border:none; background-image: url(../../picture/red_cross.png); background-repeat: no-repeat;background-size: contain;"></button>
-					</td>
-					<td ng-repeat-end ng-hide="$last">
-						<button style="
-						background-color: #5cb85c;
-						font-weight: 900;
-						margin: -5px;
-						height: 100%;
-						border: none;
-						color: white;
-						">OR
-						</button>
-					</td>
+			<div class="search-condition-box">
 
-					<td>
-						<button type="button" class="btn btn-success" ng-click="addCondition(rowIndex)">Add</button>
-					</td>
+				<div class="search-condition-row" ng-repeat-start="(rowIndex, row) in searchConditions">
 
-				</tr>
-				<tr ng-repeat-end ng-hide="$last">
-					<td colspan="20" style="
-background-color: red;
-text-align: center;
-color: white;
-font-weight: 900;
-border-radius: 20px;
-					">AND
-					</td>
-				</tr>
+					<div ng-repeat-start="searchCondition in row" class="btn-group">
 
-				</tbody>
-			</table>
+						<div  class="btn-group">
+							<button type="button" id="dropdownSearchCondition" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+								{{searchCondition.label}}
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li ng-repeat-start="option in options"><a href="javascript:void(0);" ng-click="openConditionDialog(rowIndex,$index,option)">{{option.label}}</a></li>
+								<li ng-repeat-end></li>
+							</ul>
+						</div>
+						<span class="btn btn-default skillName">{{searchCondition.value}}</span>
+						<button class="btn btn-default  search-condition-remove" ng-click="removeCondition(rowIndex,$index)">&nbsp;</button>
 
-			<button style="background-color: red;" class="btn btn-success" type="button" ng-click="addRow()">ADD ROW</button>
+					</div>
 
-			</br>
-			</br>
+					<!--<select ng-model="correctlySelected" ng-options="opt as opt.label for opt in options"
+							ng-change="openConditionDialog(rowIndex,$index,correctlySelected)"></select>-->
+
+					<span ng-repeat-end ng-hide="$last">
+						<span class="btn btn-dark">OR</span>
+					</span>
+
+					<span>
+						<button type="button" class="btn btn-dark btn-add" ng-click="addCondition(rowIndex)">Add</button>
+					</span>
+
+				</div>
+				<br />
+				<div class="searchConditionRowAdd"  ng-hide="$last">
+					<span class="btn btn-warning btn-and-type">AND</span>
+				</div>
+				<br ng-hide="$last" ng-repeat-end />
 
 
-			<p><a class="btn btn-lg btn-success" ng-click="searchOrInterviewSwitcher = true" href="#" role="button">Search</a></p>
-
-			<p><a class="btn btn-lg btn-success" ng-click="searchOrInterviewSwitcher = false" href="#" role="button">Create interview</a></p>
-
-			<hr>
-			<div collapse="! searchOrInterviewSwitcher">
-				<div>Search</div>
 			</div>
-			<div collapse=" searchOrInterviewSwitcher">
-				<div>Interview</div>
+			<div class="searchConditionRowAdd rowAdd">
+				<button class="btn btn-warning btn-add" type="button" ng-click="addRow()">ADD ROW</button>
+			</div>
+
+			<div class="buttons-holder">
+				<a class="btn btn-lg btn-success" href="#" role="button">Search</a>
+				<a class="btn btn-lg btn-success" href="#" role="button">Create interview</a>
 			</div>
 
 
@@ -186,8 +181,9 @@ border-radius: 20px;
 					Selected: <b>{{ selected.item }}</b>
 				</div>
 				<div class="modal-footer">
-					<button class="btn btn-primary" ng-click="ok()">OK</button>
-					<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+
+					<button class="btn" ng-click="cancel()">Cancel</button>
+					<button class="btn btn-success" ng-click="ok()">OK</button>
 				</div>
 			</script>
 
