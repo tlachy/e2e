@@ -16,13 +16,14 @@ var SearchController = function ($scope, $modal, $log) {
 $scope.searchOrInterviewSwitcher = true;
 
 $scope.searchConditions = [
-      [{name:'Jon', age: 30, title: 'Developer'}, {name:'Jon', age: 30, title: 'Developer'}, {name:'Jon', age: 30, title: 'Developer'}],
-      [{name:'Mike', age: 37, title: 'Manager'}, {name:'Mike', age: 37, title: 'Manager'}],
-      [{name:'Allen', age: 50, title: 'CEO'}]
+      [{ name: 'Jon', age: 30, title: 'Developer', label: 'Skill', value: '.Net C#' }, { name: 'Jon', age: 30, title: 'Developer', label: 'Skill', value: 'JAVA' }, { name: 'Jon', age: 30, title: 'Developer', label: 'Skill', value: 'PHP' }, { name: 'Jon', age: 30, title: 'Developer', label: 'Skill', value: 'C++' }],
+      [{ name: 'Mike', age: 37, title: 'Manager', label: 'Skill', value: 'Corel Draw' }, { name: 'Mike', age: 37, title: 'Manager', label: 'Skill', value: 'Adobe Photoshop' }],
+      [{ name: 'Jon', age: 30, title: 'Developer', label: 'Location', value: 'Zlín' }, { name: 'Jon', age: 30, title: 'Developer', label: 'Location', value: 'Slušovice' }, { name: 'Jon', age: 30, title: 'Developer', label: 'Location', value: 'Praha' }, { name: 'Jon', age: 30, title: 'Developer', label: 'Location', value: 'Brno' }, { name: 'Jon', age: 30, title: 'Developer', label: 'Location', value: 'Olomouc' }],
+       [{ name: 'Jon', age: 30, title: 'Developer', label: 'Lang', value: 'English' }]
       ];
 
   $scope.addRow = function(){
-       $scope.searchConditions.push([{name:'new', age: 50, title: 'CEO'}]);
+      $scope.searchConditions.push([{ name: 'new', age: 50, title: 'CEO', label: 'Availability', value: 'August 2014' }]);
   };
 
   $scope.removeCondition = function(x,y){
@@ -35,7 +36,7 @@ $scope.searchConditions = [
   };
 
   $scope.addCondition = function(rowIndex){
-        $scope.searchConditions[rowIndex].push({name:'new', age: 50, title: 'CEO'});
+      $scope.searchConditions[rowIndex].push({ name: 'new', age: 50, title: 'CEO', label: 'Gendre', value: 'Male' });
   };
 
   $scope.options = [
