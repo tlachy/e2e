@@ -1,5 +1,7 @@
 package com.gmail.tlachy.e2e.resources;
 
+import static com.gmail.tlachy.e2e.auth.Authority.ROLE_PUBLIC;
+
 import java.util.concurrent.atomic.AtomicLong;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -8,7 +10,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.codahale.metrics.annotation.Timed;
+import com.gmail.tlachy.e2e.auth.annotation.RestrictedTo;
 import com.gmail.tlachy.e2e.json.CompanyProfile;
+import com.gmail.tlachy.e2e.json.User;
+import io.dropwizard.jersey.caching.CacheControl;
 
 
 @Path("/company")
@@ -23,8 +28,11 @@ public class CompanyResource {
 
 	@GET
 	@Timed
+	@CacheControl(noCache = true)
 	@Path("/{company_id}/profile")
-	public CompanyProfile getProfile(@PathParam("company_id") long companyId) {
+	public CompanyProfile getProfile(@RestrictedTo(ROLE_PUBLIC) User publicUser, @PathParam("company_id") long companyId) {
+
+		//String email = publicUser.getEmailAddress();
 
 		if (companyId != 0) {
 			// return profile for company with id = id

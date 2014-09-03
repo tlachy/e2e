@@ -5,6 +5,8 @@ import io.dropwizard.Configuration;
 
 public class InterviewConfiguration extends Configuration {
 
+	public static final String SESSION_TOKEN_NAME ="OpenIDDemo-Session";
+
 //
 //	 These properties are read from yaml file submited as program parameter when starting the jar file
 //
