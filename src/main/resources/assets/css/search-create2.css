@@ -1,0 +1,109 @@
+
+
+
+
+.buttons-holder{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.buttons-holder .btn{
+    margin: 0 10px;
+}
+
+
+
+.search-condition-remove{
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-image: url(../images/cross.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    vertical-align: middle;
+}
+
+.search-condition-or{
+    display: inline-block;
+    padding: 0 5px;
+    color: #d3810c;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.skillName{
+    font-weight: bold;
+}
+
+
+.search-condition-row .btn.btn-dark{
+    margin: 0 6px 5px 6px;
+    
+}
+
+.search-condition-row .btn{
+    margin: 0 0 6px 0;
+}
+
+.search-condition-row{
+    display: inline-block;
+    padding: 6px 8px 0 8px;
+}
+
+.searchConditionRowAnd{
+    padding: 13px 0 0 0;
+    margin: 0 0 13px 0;
+    height: 1px;
+    position: relative;
+    border-bottom: 1px solid #5cb85c;
+}
+
+.searchConditionRowAnd-btn{
+    position: absolute;
+    left: 30px;
+    top: 3px;
+    height: 22px;
+    padding: 0 10px;
+    line-height: 22px;
+    display: inline-block;
+    color: #5cb85c;
+     background: #fff;
+     font-weight: bold;
+     font-size: 15px;
+     -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.searchConditionRowAdd{
+    padding: 10px 0 0 0;
+}
+
+.search-condition-row .btn.btn-add{
+    text-transform: uppercase;
+    margin: 0 0 0 5px;
+    vertical-align: top;
+}
+
+.btn.btn-add,
+.btn.btn-and-type{
+    padding-left: 30px;
+    background-image: url(../images/add-ico.png);
+    background-repeat: no-repeat;
+    background-position: 8px center;
+}
+
+.btn.btn-and-type{
+    background-image: url(../images/arrows-ico.png);
+}
+
+
+.search-results{
+    padding: 30px 0;
+}
+
+.search-results h2{
+    padding: 10px 0;
+}
+

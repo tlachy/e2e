@@ -13,15 +13,6 @@
 	<!-- Bootstrap core CSS -->
 	<link href="../../lib/bootstrap.min.css" rel="stylesheet">
 
-	<!-- Custom styles for this template -->
-	<link href="../../css/justified-nav.css" rel="stylesheet">
-
-	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-	<script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -29,11 +20,16 @@
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-	<script src="../../lib/angular.js"></script>
+	<script src="../../lib/angular.min.js"></script>
+	<script src="../../lib/angular-animate.js"></script>
 	<script src="../../lib/ui-bootstrap-tpls-0.10.0.js"></script>
-	<script src="../../interview.js"></script>
+	<script src="../../app/employer/employeeView.js"></script>
 
 	<link href="../../lib/bootstrap.min.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="../../css/justified-nav.css" rel="stylesheet">
+	<link href="../../css/shared.css" rel="stylesheet">
+	<link href="../../css/search-create2.css" rel="stylesheet">
 	<link href="../../css/interview.css" rel="stylesheet">
 
 
@@ -43,86 +39,210 @@
 
 <div class="container">
 
-	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="navbar-collapse collapse">
-				<form class="navbar-form navbar-right" role="form">
-					<label style="color: white;">hr@company.com</label>
-					<button type="submit" class="btn btn-success">Sign out</button>
-				</form>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-collapse collapse">
+			<form class="navbar-form navbar-right" role="form">
+				<label style="color: white;">hr@company.com</label>
+				<button type="submit" class="btn btn-success">Sign out</button>
+			</form>
+		</div>
+		<!--/.navbar-collapse -->
+	</div>
+</div>
+
+<br/>
+<br/>
+<br/>
+
+
+<div class="masthead">
+	<ul class="nav nav-justified">
+		<li><a href="./profile.html">PROFILE</a></li>
+		<li><a href="./create_search_or_interview.html">CREATE INTERVIEW / SEARCH</a></li>
+		<li class="active"><a href="./interviews.html">INTERVIEWS</a></li>
+		<li><a href="./tests.html">TESTS</a></li>
+	</ul>
+</div>
+
+
+<div ng-app="plunker">
+
+	<div id="interviewContainer" ng-controller="InterviewsController">
+
+		<h1>
+                <span class="leftPlace">
+                    {{interview.interviewName}}<br/>
+                    <span class="interview-status status-progress">{{interview.status}}</span>
+                </span>
+                <span class="rightPlace">
+                    <strong><span class="dateLabel">Opened:</span><span class="date">{{interview.startDate}}</span></strong>
+                    <span class="dateLabel">Posted:</span><span class="date">{{interview.postDate}}</span><br/>
+
+                    <strong><span class="dateLabel">Closed:</span><span class="date">{{interview.endDate}}</span></strong>
+                    <span class="dateLabel">Finished:</span><span class="date">{{interview.finishDate}}</span>
+                </span>
+			<span class="clear"></span>
+		</h1>
+
+
+		<div id="interviewWidget">
+
+			<div id="interviewPhases">
+
+				<div class="interview-phase {{(applicantGroups[$index + 1].group.length > 0?'':'empty-phase')}}" id="phase{{$index + 1}}" ng-repeat="phase in phases">
+
+					<span class="phase-number">{{$index + 1}}</span>
+					<span class="phase-name">{{phase}}</span>
+					<div class="applicants">
+					        <span id="applicantGroup{{$parent.$index + 1}}" class="applicant {{applicantGroups[$parent.$index + 1].type}}" ng-repeat="(rowIndex, group) in applicantGroups[$index + 1].group">
+								<span class="applicats-inside" ng-mouseover="showApplicantsGroup(group)" ng-mouseenter="mark(rowIndex)">{{(applicantGroups[$parent.$index + 1].type == "multi"?applicantGroups[$parent.$index + 1].group[0].length:"")}}
+								</span>
+							</span>
+					</div>
+				</div>
+
 			</div>
-			<!--/.navbar-collapse -->
+
+		</div>
+
+
+		<div id="selectedApplicants">
+
+
+			<div class="repeat-item" ng-repeat="applicant in selectedApplicants">
+				<div><span class="ico-man"></span></div>
+				<div><strong>{{applicant.name}}</strong></div>
+				<div>29 years</div>
+				<div>Alabama</div>
+				<div>1</div>
+				<div>30.8.2014</div>
+				<div>Ing. - Economics</div>
+				<div><a href="#" class="ico-show"></a><a href="#" class="ico-delete"></a></div>
+			</div>
+
+		</div>
+		<div id="listAllApplicants" class="link" ng-click="listAllApplicants()">List all applicants</div>
+
+
+		<div ng-class="description.showHideClass" ng-click="changeShowHideClass(description)">
+			<div class="stable-block">
+				<h2>Description</h2>
+                    <span class="ico-hide-show">
+                        <span class="hideText">Hide</span>
+                        <span class="showText">Show</span>
+                    </span>
+			</div>
+			<div class="hiding-block">
+				<p class="text-padded">
+					{{interview.interviewDesc}}
+
+				</p>
+			</div>
+		</div>
+
+
+	</div>
+
+
+	<div ng-controller="SearchController">
+
+		<div ng-class="criteria.showHideClass" ng-click="changeShowHideClass(criteria)">
+			<div class="stable-block">
+				<h2>Interview criteria</h2>
+                    <span class="ico-hide-show">
+                        <span class="hideText">Hide</span>
+                        <span class="showText">Show</span>
+                    </span>
+			</div>
+			<div class="hiding-block">
+
+
+				<div class="search-condition-box">
+
+					<div class="search-condition-row" ng-repeat-start="(rowIndex, row) in searchConditions">
+
+						<div ng-repeat-start="searchCondition in row" class="btn-group">
+
+							<div class="btn-group">
+								<button type="button" id="dropdownSearchCondition" class="btn btn-item dropdown-toggle" data-toggle="dropdown">
+									{{searchCondition.label}}
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li ng-repeat-start="option in options"><a href="javascript:void(0);" ng-click="openConditionDialog(rowIndex,$index,option)">{{option.label}}</a></li>
+									<li ng-repeat-end></li>
+								</ul>
+							</div>
+							<span class="btn btn-item skillName">{{searchCondition.value}}</span>
+							<a href="javascript:void(0);" class="btn btn-item" ng-click="removeCondition(rowIndex,$index)"><span class="search-condition-remove"></span></a>
+
+						</div>
+
+
+					            <span ng-repeat-end ng-hide="$last">
+						            <span class="search-condition-or">OR</span>
+					            </span>
+
+					            <span>
+						            <button type="button" class="btn btn-warning btn-add" ng-click="addCondition(rowIndex)">Add</button>
+					            </span>
+
+					</div>
+
+					<div class="searchConditionRowAnd" ng-hide="$last">
+						<span class="searchConditionRowAnd-btn" ng-hide="$last">AND</span>
+					</div>
+					<span ng-hide="$last" ng-repeat-end/>
+
+
+				</div>
+				<div class="searchConditionRowAdd rowAdd">
+					<button class="btn btn-success btn-add" type="button" ng-click="addRow()">ADD ROW</button>
+				</div>
+
+				<div class="buttons-holder">
+					<a class="btn btn-lg btn-dark" href="#" role="button">Search</a>
+					<a class="btn btn-lg btn-success" href="#" role="button">Create interview</a>
+				</div>
+
+
+				<script type="text/ng-template" id="myModalContent.html">
+					<div class="modal-header">
+						<h3 class="modal-title">I'm a modal!</h3>
+					</div>
+					<div class="modal-body">
+						<ul>
+							<li ng-repeat="item in items">
+								<a ng-click="selected.item = item">{{ item }}</a>
+							</li>
+						</ul>
+						Selected: <b>{{ selected.item }}</b>
+					</div>
+					<div class="modal-footer">
+
+						<button class="btn" ng-click="cancel()">Cancel</button>
+						<button class="btn btn-success" ng-click="ok()">OK</button>
+					</div>
+				</script>
+
+
+			</div>
+
 		</div>
 	</div>
 
-	<br/>
-	<br/>
-	<br/>
+
+</div>
 
 
-	<div class="masthead">
-		<ul class="nav nav-justified">
-			<li><a href="./profile.html">PROFILE</a></li>
-			<li><a href="./create_search_or_interview.html">CREATE  INTERVIEW / SEARCH</a></li>
-			<li class="active"><a href="./interviews.html">INTERVIEWS</a></li>
-			<li><a href="./tests.html">TESTS</a></li>
-		</ul>
-	</div>
+<!-- Site footer -->
+<div class="footer">
+	<p>&copy; Company 2014</p>
+</div>
 
-	<!-- Jumbotron -->
-	<div class="jumbotron" ng-app="plunker">
-
-		<div ng-controller="interviewControler">
-
-			<div style="font-size: xx-large;">{{interview.interviewName}}</div>
-			<div style="font-size: x-large;">{{interview.interviewDesc}}</div>
-			<div> Status: {{interview.status}}</div>
-			</br>
-			<div style="font-size: large;">Open for applying from {{interview.startDate}} to {{interview.endDate}}</div>
-
-			<div repeat-hello-world="5"></div>
-
-			<div id="interviewWidget">
-
-				<div id="interviewPhases">
-			<span ng-repeat="phase in phases"> <!-- after div there is linebreak thus span used-->
-				<button id="phase{{$index}}" class="phase">{{phase}}</button>
-				<button ng-hide="$last" class="separator">|</button> <!--replace with nice image -->
-			</span>
-				</div>
-				<div id="applicants">
-					<button id="applicantGroup{{rowIndex}}" style="left:{{getPosition(rowIndex)}}" class="applicant" ng-mouseover="showApplicantsGroup(group)" ng-mouseenter="mark(rowIndex)"
-							ng-repeat="(rowIndex, group) in applicantGroups"></button>
-				</div>
-			</div>
-
-			<button id="listAllApplicants" ng-click="listAllApplicants()">List all applicants</button>
-			</br>
-			</br>
-			</br>
-
-			<label>Selected applicants:</label>
-			<div id="selectedApplicants" ng-repeat="applicant in selectedApplicants">
-				<div ng-mouseover="highlightApplicantGroup(applicant)">
-					<label> Person id: {{applicant.personId}}</label>
-					<button>moveToNextPhase</button>
-					<button>moveToPreviousPhase</button>
-				</div>
-			</div>
-		</div>
-
-
-
-	</div>
-
-
-
-	<!-- Site footer -->
-	<div class="footer">
-		<p>&copy; Company 2014</p>
-	</div>
-
-</div> <!-- /container -->
+</div>
+<!-- /container -->
 
 
 <!-- Bootstrap core JavaScript

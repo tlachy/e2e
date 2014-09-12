@@ -1,67 +1,155 @@
+.clear{
+    display: block;
+    width: 100%;
+    height: 1px;
+    clear: both;
+    overflow: hidden;
+}
+
+#interviewContainer h1{
+    padding: 10px 0;
+}
+
+h1 .leftPlace{
+    width: 48%;
+    padding: 0 2% 0 0;
+    float: left;
+    display: block;
+    text-align: right;
+    line-height: 28px;
+}
+
+h1 .leftPlace .interview-status{
+    font-size: 18px;
+}
+
+h1 .leftPlace .status-progress{
+    color: #36a336;
+}
+
+h1 .rightPlace{
+    width: 46%;
+    margin: 8px 0 0 0;
+    padding: 0 0 0 2%;
+    float: left;
+    display: block;
+    text-align: left;
+    font-size: 15px;
+    line-height: 20px;
+    border-left: 1px solid #808080;
+}
+
+h1 .rightPlace span{
+    display: inline-block;
+}
+h1 .rightPlace .dateLabel{
+    min-width: 80px;
+}
+h1 .rightPlace .date{
+    min-width: 120px;
+}
+
 #interviewWidget {
     position: relative;
     width:100%;
-    height:300px;
-    float: left;
+    padding: 10px 0 60px 0;
 }
 
-#applicants {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
+
 
 #interviewPhases {
+    text-align: center;
+}
+
+.interview-phase{
+    display: inline-block;
+    padding: 0 20px 0 10px;
+    margin: 0 5px 5px 0;
+     -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+    color: #fff;
+    line-height: 20px;
+    position: relative;
+    background: #69c669 url(../images/phase.png) repeat-x left bottom;
+    border: 1px solid #379b37;
+}
+
+.interview-phase.empty-phase{
+    background: #84c984 url(../images/phase-empty.png) repeat-x left bottom;
+    border: 1px solid #6cb56c;
+    
+}
+
+.interview-phase span{
+    padding: 8px 0;
+    display: inline-block;
+}
+
+.interview-phase span.phase-number{
+    display: inline-block;
+    padding-right: 15px;
+    margin: 0 10px 0 0;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+    background: url(../images/arrow-left.png) no-repeat right center;
+}
+
+
+
+
+.interview-phase .applicants {
     position: absolute;
-    top: 0px;
+    top: 43px;
     left: 0px;
 }
 
-.applicant {
-    position: absolute;
-	-moz-box-shadow:inset 0px 1px 0px -1px #fceaca;
-	-webkit-box-shadow:inset 0px 1px 0px -1px #fceaca;
-	box-shadow:inset 0px 1px 0px -1px #fceaca;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffce79), color-stop(1, #eeaf41) );
-	background:-moz-linear-gradient( center top, #ffce79 5%, #eeaf41 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffce79', endColorstr='#eeaf41');
-	background-color:#ffce79;
-	-webkit-border-top-left-radius:42px;
-	-moz-border-radius-topleft:42px;
-	border-top-left-radius:42px;
-	-webkit-border-top-right-radius:42px;
-	-moz-border-radius-topright:42px;
-	border-top-right-radius:42px;
-	-webkit-border-bottom-right-radius:42px;
-	-moz-border-radius-bottomright:42px;
-	border-bottom-right-radius:42px;
-	-webkit-border-bottom-left-radius:42px;
-	-moz-border-radius-bottomleft:42px;
-	border-bottom-left-radius:42px;
-	text-indent:0;
-	border:2px solid #eeb44f;
-	display:inline-block;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	font-style:normal;
-	height:30px;
-	line-height:30px;
-	width:30px;
-	text-decoration:none;
-	text-align:center;
-	text-shadow:1px 1px 0px #ce8e28;
-	opacity:0.6;
+
+.interview-phase .applicant {
+    padding: 0;
+    height: 35px;
+    margin: 0 0 0 5px;
+    cursor: pointer;
+     -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    border-radius: 4px;
+    background: #575757 url(../images/ico-applicant.png) no-repeat 5px 5px;
+    border: 1px solid #464646;
 }
-.applicant:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00af41), color-stop(1, #ffce79) );
-	background:-moz-linear-gradient( center top, #00af41 5%, #ffce79 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeaf41', endColorstr='#ffce79');
-	color:#00af41;
-}.applicant:active {
-	position:relative;
-	top:1px;
+
+.interview-phase .applicant:hover, .interview-phase .applicant:active{
+    background-color: #d3810c;
+    border-color: #c5780a;
+}
+
+.interview-phase .applicant.multi{
+    background-image: url(../images/ico-applicants.png);
+}
+
+.interview-phase .applicant .applicats-inside{
+    width: 26px;
+    height: 35px;
+    padding: 7px 0 0 0;
+    position: relative;
+    top: -7px;
+    left: 0;
+    line-height: 35px;
+    font-size: 15px;
+    font-weight: bold;
+    box-sizing: content-box;
+    background: url(../images/arrow-aplicants.png) no-repeat center top;
+}
+
+.interview-phase .applicant:hover .applicats-inside{
+    background-image: url(../images/arrow-aplicants2.png);
+}
+
+.interview-phase .applicant.multi .applicats-inside{
+    width: auto;
+   padding: 7px 7px 0 38px;
 }
 
 
@@ -75,5 +163,47 @@
 }
 .phase:hover{
     border: 2px solid #f50000;
+}
+
+#selectedApplicants{
+    width: 100%;
+    margin: 5px 0;
+    display: table;
+    position: relative;
+    border-top: 1px solid #d8d8d8;
+     border-left: 1px solid #d8d8d8;
+    border-right: 1px solid #d8d8d8;
+}
+
+#selectedApplicants>div{
+    display: table-row;
+   
+}
+
+#selectedApplicants>div>div{
+    display: table-cell;
+    padding: 10px;
+    background: #f6f6f6;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.repeat-item.ng-enter{
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+}
+
+.repeat-item.ng-leave{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.repeat-item.ng-enter {
+    height: 0;
+  opacity:0;
+  overflow: hidden;
+}
+.repeat-item.ng-enter.ng-enter-active  {
+  opacity:1;
 }
 
