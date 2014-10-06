@@ -4,7 +4,8 @@
 
 .buttons-holder{
     text-align: center;
-    padding: 20px 0;
+    padding: 0 0 20px 0;
+
 }
 
 .buttons-holder .btn{
@@ -36,44 +37,46 @@
 }
 
 
+.search-condition-box .btn{
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+}
+
 .search-condition-row .btn.btn-dark{
-    margin: 0 6px 5px 6px;
+    margin: 0 6px 3px 6px;
     
 }
 
 .search-condition-row .btn{
-    margin: 0 0 6px 0;
+    margin: 0 0 3px 0;
 }
 
 .search-condition-row{
     display: inline-block;
-    padding: 6px 8px 0 8px;
+    padding: 6px 8px 0 0;
 }
 
 .searchConditionRowAnd{
-    padding: 13px 0 0 0;
-    margin: 0 0 13px 0;
-    height: 1px;
+    padding: 0;
+    margin: 0;
+    height: 10px;
     position: relative;
-    border-bottom: 1px solid #5cb85c;
 }
 
 .searchConditionRowAnd-btn{
     position: absolute;
-    left: 30px;
-    top: 3px;
-    height: 22px;
-    padding: 0 10px;
-    line-height: 22px;
-    display: inline-block;
+    left: -50px;
+    bottom: -35px;
+    width: 50px;
+    height: 48px;
+    padding: 25px 0 0 0;
+    display: block;
     color: #5cb85c;
-     background: #fff;
+     background: url(../images/search-arrows.png) no-repeat right center;
      font-weight: bold;
-     font-size: 15px;
-     -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -khtml-border-radius: 3px;
-    border-radius: 3px;
+     font-size: 16px;
+     box-sizing: content-box;
 }
 
 .searchConditionRowAdd{
@@ -86,21 +89,11 @@
     vertical-align: top;
 }
 
-.btn.btn-add,
-.btn.btn-and-type{
-    padding-left: 30px;
-    background-image: url(../images/add-ico.png);
-    background-repeat: no-repeat;
-    background-position: 8px center;
-}
 
-.btn.btn-and-type{
-    background-image: url(../images/arrows-ico.png);
-}
 
 
 .search-results{
-    padding: 30px 0;
+    padding: 0 0 30px 0;
 }
 
 .search-results h2{

@@ -15,6 +15,7 @@
 
 	<!-- Custom styles for this template -->
 	<link href="../../css/justified-nav.css" rel="stylesheet">
+    <link href="../../css/shared.css" rel="stylesheet">
 
 	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 	<!--[if lt IE 9]>
@@ -67,20 +68,23 @@
 	</div>
 
 	<!-- Jumbotron -->
-	<div class="jumbotron" ng-app="plunker">
+	<div ng-app="plunker">
 
-		<h2>Your interviews:</h2>
+		<h1>Your interviews:</h1>
 
 		<div ng-controller="InterviewsController">
 
-			<table border="1" cellpadding="10">
+			<table class="styled">
+                <thead>
+                    <tr style="font-weight: bold; ">
+					    <th>Company</th><th>Name</th><th>Status</th><th>Enter date</th><th>Start</th><th>End</th><th>NO of applicants</th><th>Action</th>
+				    </tr>
+                </thead>
 				<tbody>
-				<tr style="font-weight: bold; ">
-					<td>Company</td><td>Name</td><td>Status</td><td>Enter date</td><td>Start</td><td>End</td><td>NO of applicants</td><td>Action</td>
-				</tr>
+				
 				<tr ng-repeat="(rowIndex, row) in interviews">
 					<td>{{row.companyName}}</td>
-					<td>{{row.interviewName}}</td>
+					<td><strong>{{row.interviewName}}</strong></td>
 					<td>{{row.interviewStatus}}</td>
 					<td>{{row.enterDate}}</td>
 					<td>{{row.interviewStartDate}}</td>

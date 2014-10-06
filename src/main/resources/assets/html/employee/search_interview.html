@@ -15,7 +15,8 @@
 
 	<!-- Custom styles for this template -->
 	<link href="../../css/justified-nav.css" rel="stylesheet">
-	<link href="../../css/search-create.css" rel="stylesheet">
+	<link href="../../css/shared.css" rel="stylesheet">
+	<link href="../../css/search-create2.css" rel="stylesheet">
 
 
 	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -69,57 +70,62 @@
 
 	<div ng-app="plunker">
 
+
+        <h1>Search for interview</h1>
+	    <p>
+		    Lorem ipsum dolor sit amet consectetuer semper id laoreet ipsum faucibus. Elit porttitor mauris et Quisque Integer
+		    turpis pretium Curabitur hac fames. Felis lacus quis wisi at tincidunt orci Aliquam sem congue condimentum.
+
+	    </p>
+	    <br />
+
 		<div ng-controller="SearchController">
 
 			<div class="search-condition-box">
 
 				<div class="search-condition-row" ng-repeat-start="(rowIndex, row) in searchConditions">
 
-					<div ng-repeat-start="searchCondition in row" class="btn-group">
+				<div ng-repeat-start="searchCondition in row" class="btn-group">
 
-						<div  class="btn-group">
-							<button type="button" id="dropdownSearchCondition" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-								{{searchCondition.label}}
-								<span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu" role="menu">
-								<li ng-repeat-start="option in options"><a href="javascript:void(0);" ng-click="openConditionDialog(rowIndex,$index,option)">{{option.label}}</a></li>
-								<li ng-repeat-end></li>
-							</ul>
-						</div>
-						<span class="btn btn-default skillName">{{searchCondition.value}}</span>
-						<button class="btn btn-default  search-condition-remove" ng-click="removeCondition(rowIndex,$index)">&nbsp;</button>
-
+					<div class="btn-group">
+						<button type="button" id="dropdownSearchCondition" class="btn btn-item dropdown-toggle" data-toggle="dropdown">
+							{{searchCondition.label}}
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" role="menu">
+							<li ng-repeat-start="option in options"><a href="javascript:void(0);" ng-click="openConditionDialog(rowIndex,$index,option)">{{option.label}}</a></li>
+							<li ng-repeat-end></li>
+						</ul>
 					</div>
-
-					<!--<select ng-model="correctlySelected" ng-options="opt as opt.label for opt in options"
-							ng-change="openConditionDialog(rowIndex,$index,correctlySelected)"></select>-->
-
-					<span ng-repeat-end ng-hide="$last">
-						<span class="btn btn-dark">OR</span>
-					</span>
-
-					<span>
-						<button type="button" class="btn btn-dark btn-add" ng-click="addCondition(rowIndex)">Add</button>
-					</span>
+					<span class="btn btn-item skillName">{{searchCondition.value}}</span>
+					<a href="javascript:void(0);" class="btn btn-item" ng-click="removeCondition(rowIndex,$index)"><span class="search-condition-remove"></span></a>
 
 				</div>
-				<br />
-				<div class="searchConditionRowAdd"  ng-hide="$last">
-					<span class="btn btn-warning btn-and-type">AND</span>
-				</div>
-				<br ng-hide="$last" ng-repeat-end />
 
 
-			</div>
-			<div class="searchConditionRowAdd rowAdd">
-				<button class="btn btn-warning btn-add" type="button" ng-click="addRow()">ADD ROW</button>
+					    <span ng-repeat-end ng-hide="$last">
+						    <span class="search-condition-or">OR</span>
+					    </span>
+
+					    <span>
+						    <button type="button" class="btn btn-warning btn-add" ng-click="addCondition(rowIndex)">Add</button>
+					    </span>
+
 			</div>
 
-			<div class="buttons-holder">
-				<a class="btn btn-lg btn-success" href="#" role="button">Search</a>
-				<a class="btn btn-lg btn-success" href="#" role="button">Create interview</a>
+				<div class="searchConditionRowAnd" ng-hide="$last">
+				<span class="searchConditionRowAnd-btn" ng-hide="$last">AND</span>
 			</div>
+			<span ng-hide="$last" ng-repeat-end></span>
+
+                </div>
+		<div class="searchConditionRowAdd rowAdd">
+			<button class="btn btn-success btn-add" type="button" ng-click="addRow()">ADD ROW</button>
+		</div>
+		        <div class="buttons-holder">
+			        <a class="btn btn-lg btn-success" href="#" role="button">Search</a>
+
+		        </div>
 
 
 			<script type="text/ng-template" id="myModalContent.html">

@@ -2,7 +2,17 @@ angular.module('plunker', ['ui.bootstrap']);
 
 var ProfileController = function ($scope, $modal, $log) {
 
+    $scope.open = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
 
+        $scope.opened = true;
+    };
+
+    $scope.dateOptions = {
+        formatYear: 'yy',
+        startingDay: 1
+    };
 };
 
 
@@ -85,6 +95,13 @@ $scope.searchConditions = [
   };
 
   $scope.items = ['item1', 'item2', 'item3'];
+
+
+
+
+
+
+
 
 
 };

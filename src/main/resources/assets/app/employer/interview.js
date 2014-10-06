@@ -31,7 +31,7 @@ var interviewControler = function ($scope, $modal, $log) {
     $scope.interview = {interviewId:5,
                      interviewName:'Java Developer',
                      interviewDesc:'We are looking for senior java dev with spring and wicket',
-                     phases:['application','CV review', 'Java test', 'Skype interview', 'Face-to-Face interview', 'Job offer', 'Offer accepted'],
+                     phases: [{ name: 'application', status: 'done' }, { name: 'CV review', status: 'active' }, { name: 'Java test', status: 'active' }, { name: 'Skype interview', status: 'active' }, { name: 'Face-to-Face interview', status: 'active' }, { name: 'Job offer', status: 'active' }, { name: 'Offer accepted', status: 'unactive' }],
                      startDate: "14.6.2014",
                      endDate: "29.6.2014",
                      status: "In Progress",
@@ -47,7 +47,7 @@ var interviewControler = function ($scope, $modal, $log) {
     var a6 = {interviewId:5,personId:6,interviewPhase:4};
     var a7 = {interviewId:5,personId:7,interviewPhase:3};
     var a8 = {interviewId:5,personId:8,interviewPhase:2};
-    var a9 = {interviewId:5,personId:9,interviewPhase:1};
+    var a9 = {interviewId:5,personId:9,interviewPhase:2};
 
     var applicants = [];
     applicants.push(a1);
@@ -63,7 +63,6 @@ var interviewControler = function ($scope, $modal, $log) {
     $scope.phases = $scope.interview.phases;
 
     $scope.showApplicantsGroup = function(group){
-        console.log(group);
         $scope.selectedApplicants = group;
     }
     $scope.selectedApplicants = applicants;

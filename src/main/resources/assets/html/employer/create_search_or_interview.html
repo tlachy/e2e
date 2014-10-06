@@ -14,7 +14,8 @@
 
 	<!-- Custom styles for this template -->
 	<link href="../../css/justified-nav.css" rel="stylesheet">
-	<link href="../../css/search-create.css" rel="stylesheet">
+    <link href="../../css/shared.css" rel="stylesheet">
+	<link href="../../css/search-create2.css" rel="stylesheet">
 
 	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 	<!--[if lt IE 9]>
@@ -74,7 +75,7 @@
 		turpis pretium Curabitur hac fames. Felis lacus quis wisi at tincidunt orci Aliquam sem congue condimentum.
 
 	</p>
-	<br /><br />
+	<br />
 
 
 	<div ng-controller="SearchController">
@@ -85,8 +86,8 @@
 
 				<div ng-repeat-start="searchCondition in row" class="btn-group">
 
-					<div  class="btn-group">
-						<button type="button" id="dropdownSearchCondition" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					<div class="btn-group">
+						<button type="button" id="dropdownSearchCondition" class="btn btn-item dropdown-toggle" data-toggle="dropdown">
 							{{searchCondition.label}}
 							<span class="caret"></span>
 						</button>
@@ -95,34 +96,33 @@
 							<li ng-repeat-end></li>
 						</ul>
 					</div>
-					<span class="btn btn-default skillName">{{searchCondition.value}}</span>
-					<button class="btn btn-default  search-condition-remove" ng-click="removeCondition(rowIndex,$index)">&nbsp;</button>
+					<span class="btn btn-item skillName">{{searchCondition.value}}</span>
+					<a href="javascript:void(0);" class="btn btn-item" ng-click="removeCondition(rowIndex,$index)"><span class="search-condition-remove"></span></a>
 
 				</div>
 
-				<!--<select ng-model="correctlySelected" ng-options="opt as opt.label for opt in options"
-						ng-change="openConditionDialog(rowIndex,$index,correctlySelected)"></select>-->
 
-					<span ng-repeat-end ng-hide="$last">
-						<span class="btn btn-dark">OR</span>
-					</span>
+					    <span ng-repeat-end ng-hide="$last">
+						    <span class="search-condition-or">OR</span>
+					    </span>
 
-					<span>
-						<button type="button" class="btn btn-dark btn-add" ng-click="addCondition(rowIndex)">Add</button>
-					</span>
+					    <span>
+						    <button type="button" class="btn btn-warning btn-add" ng-click="addCondition(rowIndex)">Add</button>
+					    </span>
 
 			</div>
-			<br />
-			<div class="searchConditionRowAdd"  ng-hide="$last">
-				<span class="btn btn-warning btn-and-type">AND</span>
+
+			<div class="searchConditionRowAnd" ng-hide="$last">
+				<span class="searchConditionRowAnd-btn" ng-hide="$last">AND</span>
 			</div>
-			<br ng-hide="$last" ng-repeat-end />
+			<span ng-hide="$last" ng-repeat-end></span>
 
 
 		</div>
 		<div class="searchConditionRowAdd rowAdd">
-			<button class="btn btn-warning btn-add" type="button" ng-click="addRow()">ADD ROW</button>
+			<button class="btn btn-success btn-add" type="button" ng-click="addRow()">ADD ROW</button>
 		</div>
+
 
 		<div class="buttons-holder">
 			<a class="btn btn-lg btn-success" href="#" role="button">Search</a>
@@ -155,7 +155,7 @@
 
 <div class="search-results">
 	<h2>Search results</h2>
-	<table>
+	<table class="styled">
 		<thead>
 		<tr>
 			<th></th>

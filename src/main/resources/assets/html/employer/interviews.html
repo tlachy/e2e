@@ -41,7 +41,11 @@
 
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	<div class="container">
+        
 		<div class="navbar-collapse collapse">
+            <div class="navbar-left">
+                <a class="button-back" href="javascript:go(-1);">BACK</a>
+            </div>
 			<form class="navbar-form navbar-right" role="form">
 				<label style="color: white;">hr@company.com</label>
 				<button type="submit" class="btn btn-success">Sign out</button>
@@ -86,14 +90,16 @@
 		</h1>
 
 
+       
 		<div id="interviewWidget">
 
 			<div id="interviewPhases">
 
-				<div class="interview-phase {{(applicantGroups[$index + 1].group.length > 0?'':'empty-phase')}}" id="phase{{$index + 1}}" ng-repeat="phase in phases">
+				<div class="interview-phase {{phase.status}}" id="phase{{$index + 1}}" style="z-index:{{200-$index }};" ng-repeat="phase in phases">
 
-					<span class="phase-number">{{$index + 1}}</span>
-					<span class="phase-name">{{phase}}</span>
+					
+					<span class="phase-name"><span class="phase-number">{{$index + 1}}&nbsp;</span>{{phase.name}}</span>
+                    <span class="phase-arrow" ng-hide="$last"></span>
 					<div class="applicants">
 					        <span id="applicantGroup{{$parent.$index + 1}}" class="applicant {{applicantGroups[$parent.$index + 1].type}}" ng-repeat="(rowIndex, group) in applicantGroups[$index + 1].group">
 								<span class="applicats-inside" ng-mouseover="showApplicantsGroup(group)" ng-mouseenter="mark(rowIndex)">{{(applicantGroups[$parent.$index + 1].type == "multi"?applicantGroups[$parent.$index + 1].group[0].length:"")}}
@@ -103,34 +109,37 @@
 				</div>
 
 			</div>
+            <div class="clear"></div>
+
+            <div id="selectedApplicants">
+
+
+			    <div class="repeat-item" ng-repeat="applicant in selectedApplicants">
+				
+				    <span><strong>{{applicant.name}}</strong></span><br />
+                    Phase: {{ interview.phases[applicant.interviewPhase].name}}<br />
+				    <span>29 years</span>, <span>Alabama</span><br />
+				    <span>Ing. - Economics</span><br />
+				    <span><a href="#" class="link">Show details</a></span>
+			    </div>
+                
+                
+		    </div>
+		    
 
 		</div>
 
+        <div id="listAllApplicants" class="link" ng-click="listAllApplicants()">List all applicants</div>
 
-		<div id="selectedApplicants">
-
-
-			<div class="repeat-item" ng-repeat="applicant in selectedApplicants">
-				<div><span class="ico-man"></span></div>
-				<div><strong>{{applicant.name}}</strong></div>
-				<div>29 years</div>
-				<div>Alabama</div>
-				<div>1</div>
-				<div>30.8.2014</div>
-				<div>Ing. - Economics</div>
-				<div><a href="#" class="ico-show"></a><a href="#" class="ico-delete"></a></div>
-			</div>
-
-		</div>
-		<div id="listAllApplicants" class="link" ng-click="listAllApplicants()">List all applicants</div>
-
-
-		<div ng-class="description.showHideClass" ng-click="changeShowHideClass(description)">
+            <div class="clear"></div>
+		<br />
+   
+		<div ng-class="description.showHideClass">
 			<div class="stable-block">
-				<h2>Description</h2>
-                    <span class="ico-hide-show">
-                        <span class="hideText">Hide</span>
-                        <span class="showText">Show</span>
+                <h2>Description</h2>
+                    <span class="ico-hide-show" ng-click="changeShowHideClass(description)">
+                        <span class="hideText"></span>
+                        <span class="showText"></span>
                     </span>
 			</div>
 			<div class="hiding-block">
@@ -147,12 +156,12 @@
 
 	<div ng-controller="SearchController">
 
-		<div ng-class="criteria.showHideClass" ng-click="changeShowHideClass(criteria)">
+		<div ng-class="criteria.showHideClass" >
 			<div class="stable-block">
-				<h2>Interview criteria</h2>
-                    <span class="ico-hide-show">
-                        <span class="hideText">Hide</span>
-                        <span class="showText">Show</span>
+                <h2>Interview criteria</h2>
+                    <span class="ico-hide-show" ng-click="changeShowHideClass(criteria)">
+                        <span class="hideText"></span>
+                        <span class="showText"></span>
                     </span>
 			</div>
 			<div class="hiding-block">

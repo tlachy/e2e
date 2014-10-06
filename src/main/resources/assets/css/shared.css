@@ -17,16 +17,62 @@ h1{
     font-size: 28px;
 }
 
+h2{
+    text-align: left;
+}
+
+
 .text-center{
     text-align: center;
 }
 
 .text-padded{
-    padding: 0 100px;
+    padding: 0 100px 0 0;
+}
+
+.text-backgrounded{
+    background: #f4f4f4;
+    padding: 20px 15px;
+}
+
+.line{
+    display: block;
+    width: 100%;
+    height: 10px;
+    clear: both;
+    overflow: hidden;
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+
+ul.nav-justified{
+    display: table;
+}
+
+ul.nav-justified li{
+    width: auto;
+}
+
+
+.float-right{
+    float: right;
 }
 
 
 /* ========= COMMON ======== */
+
+.btn.btn-add,
+.btn.btn-and-type{
+    padding-left: 30px;
+    background-image: url(../images/add-ico.png);
+    background-repeat: no-repeat;
+    background-position: 8px center;
+}
+
+.btn.btn-and-type{
+    background-image: url(../images/arrows-ico.png);
+}
 
 .btn-dark{
     color: #fff;
@@ -79,40 +125,61 @@ h1{
     cursor: pointer;
 }
 
+.button-back{
+    line-height: 25px;
+    display: inline-block;
+    margin: 14px 0 0 0;
+    padding: 0 0 0 30px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    vertical-align: middle;
+    background: url(../images/button-back.png) no-repeat left top; 
+}
+
+.button-back:hover{
+    background-position: left -37px;
+    text-decoration: none;
+    color: #fff;
+}
+
 
 .hide-show{
-     margin: 50px 0 0 0;
+     margin: 20px 0 0 0;
 }
 
 .hide-show .stable-block{
-    padding: 0 0 40px 0;
-   margin: 0 0 12px 0;
+    padding: 0 0 35px 0;
+   margin: 0 0 20px 0;
     position: relative;
     background: url(../images/tint.png) no-repeat center bottom; 
+    
 }
 
-.hide-show.state-hidden{
-    cursor: pointer;
-}
-
-.hide-show h2{
-    text-align: center;
-    font-size: 25px;
-    text-transform: uppercase;
-    margin: 0;
+.hide-show .stable-block h2{
     padding: 0;
+    margin: 0;
+
+    text-align: center;
+    
 }
+
+
+
 
 .hide-show .ico-hide-show{
+    position: absolute;
+    right: 0;
+    top: 0;
     display: block;
     padding: 0 40px 0 0;
     height: 34px;
     line-height: 34px;
     text-transform: uppercase;
-    font-size: 20px;
-    position: absolute;
-    right: 20px;
-    top: 0;
+    font-size: 15px;
+    text-align: right;
+
+
     color: #555;
     cursor: pointer;
     background: url(../images/ico-hide-show.png) no-repeat right top; 
@@ -122,13 +189,16 @@ h1{
      -webkit-transition:0.7s linear all;
      -moz-transition:0.7s linear all;
     transition:0.7s linear all;
+    padding: 0 0 30px 0;
      max-height: 1000px;
 }
 
 .hide-show.state-hidden .hiding-block{
+    padding: 0;
     overflow: hidden;
     opacity: 0;
     max-height: 0px;
+    
 }
 
 .hide-show.state-hidden .ico-hide-show{
@@ -160,14 +230,19 @@ table.styled{
 
 table.styled td,
 table.styled th{
-    padding: 10px;
+    padding: 5px 10px;
 }
 
 
 table.styled th{
-    background: #363636;
+    padding: 10px;
+    background: #444;
     color: #fff;
-    font-weight: bold;
+    border-bottom: 1px solid #898d87;
+    font-weight: normal;
+
+
+
 }
 
 table.styled th a{
@@ -193,7 +268,7 @@ table.styled th a:hover{
 
 
 table.styled td{
-    background: #f6f6f6;
+
     border-bottom: 1px solid #d8d8d8;
 }
 
@@ -202,6 +277,7 @@ table.styled td{
 table.styled tr:hover td{
     background: #e7e9e7;
 }
+
 
 table.styled td:first-child{
     width: 22px;
@@ -228,3 +304,42 @@ table.styled tr:last-child td:first-child {
 table.styled tr:last-child td:last-child {
   border-bottom-right-radius: 6px;
 }
+
+
+/* ==== DATEPICKER === */
+
+ul[datepicker-popup-wrap] .btn-sm{
+    padding: 2px 6px;
+    border: 0;
+}
+
+ul[datepicker-popup-wrap] li{
+    padding: 0 10px;
+}
+
+/* ==== language + contact === */
+
+.language{
+    line-height: 17px;
+    padding: 0 0 0 33px;
+    margin: 0 5px;
+}
+
+.language.cz{
+    background: url(../images/flags/Czech-Republic.png) no-repeat left center;
+}
+.language.en{
+    background: url(../images/flags/United-Kingdom.png) no-repeat left center;
+}
+
+.contact .ico{
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(../images/contacts-icons.png) no-repeat left top;
+}
+
+.contact .ico.skype{ background-position: -3px top; }
+.contact .ico.email{ background-position: -34px top; }
+.contact .ico.phone{ background-position: -65px top; }

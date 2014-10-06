@@ -1,0 +1,371 @@
+
+.leftPanel{
+    width: 70%;
+    float: left;
+    border-right: 1px solid #d9d9d9;
+}
+
+.rightPanel{
+    padding: 10px 0;
+    width: 30%;
+    float: left;
+    border-left: 1px solid #d9d9d9;
+    position: relative;
+    left: -1px;
+}
+
+
+
+/* ======= */
+
+#profileContainer{
+    padding: 20px 0;
+}
+
+#profileContainer h2{
+    margin: 10px 0 0 0;
+    font-size: 22px;
+    padding: 10px 20px;
+    text-align: left;
+    background: #f4f4f4;
+}
+
+.dropdown-holder{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-holder .dropdown-menu li{
+    padding: 2px 10px;
+    font-size: 12px;
+    color: #777;
+    white-space: nowrap;
+}
+
+.dropdown-holder .dropdown-menu li:hover{
+    color: #333;
+    background: #ebebeb;
+}
+
+.dropdown-holder .dropdown-menu li .action-ico{
+    opacity: 1;
+    margin: 0 3px 0 0;
+}
+
+.action-ico{
+    width: 20px;
+    height: 19px;
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+    cursor: pointer;
+    opacity: 0.8;
+    background: url(../images/action-icons.png) no-repeat left top;
+}
+
+.action-ico:hover{
+    opacity: 1;
+}
+
+.action-ico.ico-visible{ background-position: -8px -2px; }
+.action-ico.partial-visible{ background-position: -41px -2px; }
+.action-ico.ico-invisible{ background-position: -74px -2px; }
+
+.action-ico.searchable{ background-position: -103px -2px; }
+.action-ico.not-searchable{ background-position: -131px -2px; }
+.action-ico.ico-delete{ background-position: -157px -3px; }
+.action-ico.ico-edit{ background-position: -180px -2px; }
+
+.btn-export{
+    margin: 0 0 0 10px;
+}
+
+.nowrap{
+    padding: 0 4px;
+    white-space: nowrap;
+}
+
+
+/* ===  photoPanel  ==== */
+
+.photoPanel{
+    width: 30%;
+    float: left;
+}
+
+.photo-holder{
+    position: relative;
+    margin: 0 0 15px 0;
+    background: #f4f4f4;
+}
+
+.photo-holder .action-part{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 8px 15px;
+    background-color:rgba(255, 255, 255, 0.7);
+}
+
+.photoPanel img{
+    width: 100%;
+    display: block;
+}
+
+.photoPanel .dropdown{
+    display: inline-block;
+    float: right;
+}
+
+.photoPanel .dropdown .btn{
+    color: #777;
+    font-size: 13px;
+}
+
+.photoPanel .form-group{
+    clear: both;
+    margin-bottom: 10px;
+}
+
+.photoPanel .form-group label{
+    padding: 5px 0 0 0;
+    font-weight: normal;
+}
+
+.photoPanel .photo-button{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+
+/* ===  personalForm  ==== */
+
+.personalForm{
+    width: 60%;
+    margin: 20px 0 20px 7%;
+    float: left;
+}
+
+.personalForm .form-group{
+    margin-bottom: 0;
+    clear: both;
+}
+
+.personalForm .form-group input,
+.personalForm .form-group .input-group, 
+.personalForm .form-group .dropdown{
+    width: 55%;
+    margin: 0 10px 10px 0;
+    float: left;
+}
+
+.personalForm .form-group input{
+    display: inline-block;
+}
+
+.personalForm .form-group .input-group input{
+    width: 100%;
+    margin: 0;
+}
+
+.personalForm .form-group label{
+    width: 26%;
+    padding: 7px 1% 0 0;
+    display: inline-block;
+    float: left;
+    color: #555;
+    font-size: 13px;
+}
+
+.personalForm .form-group .action-ico{
+    margin: 5px 0 0 0;
+}
+
+/* ===  rightpanel-item  ==== */
+
+
+.rightpanel-item{
+    clear: both;
+    padding: 7px 0 3px 0;
+    margin: 0 0 0 20px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.rightpanel-item .actions{
+    float: right;
+    padding: 3px 0 3px 10px;  
+}
+
+.rightpanel-item .actions ul{
+    text-align: left;
+}
+
+.rightPanel .btn-add{
+    margin: 10px 0 10px 20px;
+}
+
+
+
+
+
+/* ===  job-history-item  ==== */
+
+#profileContainer .job-history h2{
+    position: relative;
+    margin:10px 0 0 0;
+}
+
+.job-history h2 .btn-add{
+    margin: 0 0 0 20px;
+}
+
+.job-history .btn-add{
+    margin: 10px 0;
+}
+
+.job-history-item{
+    margin:0;
+    clear: both;
+}
+
+.job-history-item .btn-add{
+    margin: 10px 0;
+}
+
+.job-history-item h3{
+    background: #e9f5e9;
+    padding: 5px 10px;
+    font-size: 14px;
+    margin: 0;
+}
+
+.job-history-item h3 strong{
+    font-size: 16px;
+    color: #d68612;
+}
+
+.jh-left{
+    width: 20%;
+    float: left;
+    padding: 15px 0 0 0;
+    text-align: right;
+}
+
+.jh-left .actions{
+    margin: 10px 0 0 0;
+    padding: 3px 0;
+    border-top: 1px solid #ebebeb;
+}
+
+.jh-left .actions ul{
+    text-align: left;
+}
+
+.jh-right{
+    width: 75%;
+    padding: 15px 0 10px 5%;
+    float: left;
+}
+
+.jh-right h4{
+    margin: 0 0 10px 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.jh-right h4 .green{
+    color: #359935;
+}
+
+.jh-right p{
+    margin: 5px 0;
+    padding: 0;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+
+
+
+/* ===============  responsive  ==== */
+
+
+@media (max-width: 992px) {
+
+    #profileContainer{
+        position: relative;
+    }
+
+    .leftPanel{
+        padding-top: 30px;
+    }
+
+    .leftPanel, .rightPanel {
+        width: 100%;
+    }
+
+    .rightPanel{
+        position: static;
+        border-left: 0;
+        border-right: 1px solid #d9d9d9;
+    }
+
+    .btn-export{
+        position: absolute;
+        left: 0;
+        top: 15px;
+    }
+
+
+    .rightpanel-item{
+        margin-left: 0;
+    }
+
+    .jh-left{
+        width: 25%;
+    }
+
+    .jh-right{
+        width: 74%;
+        padding-left: 2%;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .photoPanel{
+        width: 100%;
+        float: none;
+    }
+
+    .photo-holder{
+        width: 39%;
+        float: left;
+        margin: 0 1% 10px 0;
+    }
+
+    .photoPanel .form-group{
+        width: 58%;
+        margin: 10px 1% 0 1%;
+        float: left;
+        clear: none;
+    }
+
+    .photoPanel .form-group label{
+        display: inline-block;
+        width: 120px;
+    }
+
+    .photoPanel .dropdown{
+        float: none;
+    }
+
+    .personalForm{
+        width: 100%;
+        margin: 10px 0;
+    }
+
+}

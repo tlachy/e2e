@@ -1,127 +1,702 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<link rel="icon" href="../../favicon.ico">
+    <meta charset="utf-8">
+    <meta lang="cz" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-	<title>Interview</title>
+    <title>Profile</title>
 
-	<!-- Bootstrap core CSS -->
-	<link href="../../lib/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="../../lib/bootstrap.min.css" rel="stylesheet">
 
-	<!-- Custom styles for this template -->
-	<link href="../../css/justified-nav.css" rel="stylesheet">
-	<link href="../../css/search-create.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../../css/justified-nav.css" rel="stylesheet">
+    <link href="../../css/shared.css" rel="stylesheet">
+    <link href="../../css/profile.css" rel="stylesheet">
 
 
-	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-	<!--[if lt IE 9]>
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]>
 	<script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-	<script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-	<script src="../../lib/angular.js"></script>
-	<script src="../../lib/ui-bootstrap-tpls-0.10.0.js"></script>
-	<script src="../../app/employee/employeeView.js"></script>
+    <script src="../../lib/angular.js"></script>
+    <script src="../../lib/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="../../app/employee/employeeView.js"></script>
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="navbar-collapse collapse">
-				<form class="navbar-form navbar-right" role="form">
-					<label style="color: white;">hr@company.com</label>
-					<button type="submit" class="btn btn-success">Sign out</button>
-				</form>
-			</div>
-			<!--/.navbar-collapse -->
-		</div>
-	</div>
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-right" role="form">
+                        <label style="color: white;">hr@company.com</label>
+                        <button type="submit" class="btn btn-success">Sign out</button>
+                    </form>
+                </div>
+                <!--/.navbar-collapse -->
+            </div>
+        </div>
 
-	<br/>
-	<br/>
-	<br/>
-
-
-	<div class="masthead">
-		<ul class="nav nav-justified">
-			<li class="active"><a href="./profile.html">PROFILE</a></li>
-			<li><a href="./search_interview.html">SEARCH FOR INTERVIEW</a></li>
-			<li><a href="./interviews.html">INTERVIEWS</a></li>
-			<li><a href="./documents.html">DOCUMENTS</a></li>
-			<li><a href="./log.html">LOG</a></li>
-		</ul>
-	</div>
-
-	<!-- Jumbotron -->
-	<div ng-app="plunker">
-
-		<!--<h2 style="float: right;">Status:</h2>OK-->
-		<!--<h2 style="float: right;">Verification:</h2>DONE-->
+        <br />
+        <br />
+        <br />
 
 
-		<!--<div style="float: left; width: 300px;">-->
-			<!--<h2>Personal Details:</h2>-->
+        <div class="masthead">
+            <ul class="nav nav-justified">
+                <li class="active"><a href="./profile.html">PROFILE</a></li>
+                <li><a href="./search_interview.html">SEARCH FOR INTERVIEW</a></li>
+                <li><a href="./interviews.html">INTERVIEWS</a></li>
+                <li><a href="./documents.html">DOCUMENTS</a></li>
+                <li><a href="./log.html">LOG</a></li>
+            </ul>
+        </div>
 
-			<!--<form class="" role="form">-->
-				<!--<div class="form-group">-->
-					<!--<input type="text" placeholder="First Name" class="form-control">-->
-				<!--</div>-->
-				<!--<div class="form-group">-->
-					<!--<input type="text" placeholder="Last Name" class="form-control">-->
-				<!--</div>-->
-				<!--<div class="form-group">-->
-					<!--<input type="text" placeholder="Date Of Born" class="form-control">-->
-				<!--</div>-->
-				<!--<div class="form-group">-->
-					<!--<input type="text" placeholder="Nationality" class="form-control">-->
-				<!--</div>-->
-				<!--<div class="form-group">-->
-					<!--<input type="text" placeholder="Gender" class="form-control">-->
-				<!--</div>-->
-				<!--<div class="form-group">-->
-					<!--<input type="text" placeholder="Religion" class="form-control">-->
-				<!--</div>-->
-				<!--<button type="submit" class="btn btn-success">Change</button>-->
-			<!--</form>-->
-		<!--</div>-->
+        <!-- Jumbotron -->
+        <div ng-app="plunker">
+
+            <div id="profileContainer" ng-controller="ProfileController">
+
+                <div class="leftPanel">
+                    <h2>Personal details:</h2>
+                    <div class="photoPanel">
+                        <div class="photo-holder">
+                            <img src="../../images/user.jpg" alt="User photo" />
+                            <button type="button" class="btn btn-warning photo-button"><span class="glyphicon glyphicon-refresh"></span> Change photo</button>
+                            <div class="action-part">
+                                <div class="dropdown-holder">
+                                    <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><span class="action-ico ico-visible"></span>visible</li>
+                                        <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                        <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                    </ul>
+                                </div>
+                                <span title="Delete" class="action-ico ico-delete"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Ownership:</label>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                    Owned by you
+                        <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Owned by you</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Owned by company</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Complete visibility:</label>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="Button1" data-toggle="dropdown">
+                                    Public
+                        <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Hidden</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">In Interviews</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Public</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Status:</label>
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="Button2" data-toggle="dropdown">
+                                    Open for Interview
+                        <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Open for Interview</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Not open for intervies</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="personalForm">
+                        <form class="" role="form">
+                            <div class="form-group">
+                                <label>First name:</label>
+                                <input type="text" placeholder="First Name" class="form-control">
+                                <!-- visibility ico and dropdown -->
+                                <div class="dropdown-holder">
+                                    <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><span class="action-ico ico-visible"></span>visible</li>
+                                        <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                        <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                    </ul>
+                                </div>
+                                <!-- Searchable ico and dropdown -->
+                                <div class="dropdown-holder">
+                                    <span title="Searchable" class="action-ico searchable  dropdown-toggle" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><span class="action-ico searchable"></span>I am searchable by this</li>
+                                        <li><span class="action-ico not-searchable"></span>I am NOT searchable by this</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Middle names:</label>
+                                <input type="text" placeholder="Middle Names" class="form-control">
+                                <!-- visibility ico and dropdown -->
+                                <div class="dropdown-holder">
+                                    <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><span class="action-ico ico-visible"></span>visible</li>
+                                        <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                        <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                    </ul>
+                                </div>
+                                <!-- Searchable ico and dropdown -->
+                                <div class="dropdown-holder">
+                                    <span title="Searchable" class="action-ico searchable  dropdown-toggle" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><span class="action-ico searchable"></span>I am searchable by this</li>
+                                        <li><span class="action-ico not-searchable"></span>I am NOT searchable by this</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Last name:</label>
+                                <input type="text" placeholder="Last Name" class="form-control">
+                                <!-- visibility ico and dropdown -->
+                                <div class="dropdown-holder">
+                                    <span title="Invisible" class="action-ico ico-invisible dropdown-toggle" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><span class="action-ico ico-visible"></span>visible</li>
+                                        <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                        <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                    </ul>
+                                </div>
+                                <!-- Searchable ico and dropdown -->
+                                <div class="dropdown-holder">
+                                    <span title="Searchable" class="action-ico searchable  dropdown-toggle" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><span class="action-ico searchable"></span>I am searchable by this</li>
+                                        <li><span class="action-ico not-searchable"></span>I am NOT searchable by this</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Date of born:</label>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" datepicker-popup="yyyy/MM/dd" ng-model="dt" is-open="opened" show-weeks="false" datepicker-options="dateOptions" close-text="Close" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+                                </p>
+
+                                <!-- visibility ico and dropdown -->
+                                <div class="dropdown-holder">
+                                    <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><span class="action-ico ico-visible"></span>visible</li>
+                                        <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                        <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                    </ul>
+                                </div>
+                                <!-- Searchable ico and dropdown -->
+                                <div class="dropdown-holder">
+                                    <span title="Searchable" class="action-ico searchable  dropdown-toggle" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><span class="action-ico searchable"></span>I am searchable by this</li>
+                                        <li><span class="action-ico not-searchable"></span>I am NOT searchable by this</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Nationality:</label>
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="Button3" data-toggle="dropdown">
+                                        Czech republic
+                                <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">USA</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Germany</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- visibility ico and dropdown -->
+                                <div class="dropdown-holder">
+                                    <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><span class="action-ico ico-visible"></span>visible</li>
+                                        <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                        <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                    </ul>
+                                </div>
+                                <!-- Searchable ico and dropdown -->
+                                <div class="dropdown-holder">
+                                    <span title="Searchable" class="action-ico searchable  dropdown-toggle" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><span class="action-ico searchable"></span>I am searchable by this</li>
+                                        <li><span class="action-ico not-searchable"></span>I am NOT searchable by this</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Gender:</label>
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="Button4" data-toggle="dropdown">
+                                        Male
+                                <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Male</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Female</a></li>
+                                    </ul>
+                                </div>
+                                <!-- visibility ico and dropdown -->
+                                <div class="dropdown-holder">
+                                    <span title="Visible in interviews" class="action-ico partial-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><span class="action-ico ico-visible"></span>visible</li>
+                                        <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                        <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                    </ul>
+                                </div>
+                                <!-- Searchable ico and dropdown -->
+                                <div class="dropdown-holder">
+                                    <span title="Not searchable" class="action-ico not-searchable  dropdown-toggle" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><span class="action-ico searchable"></span>I am searchable by this</li>
+                                        <li><span class="action-ico not-searchable"></span>I am NOT searchable by this</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label>Religion:</label>
+                                <div class="dropdown">
+                                    <button class="btn btn-default dropdown-toggle" type="button" id="Button5" data-toggle="dropdown">
+                                        Christianity
+                                <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Christianity</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Islam</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Hinduism</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Buddhism</a></li>
+                                    </ul>
+                                </div>
+                                <!-- visibility ico and dropdown -->
+                                <div class="dropdown-holder">
+                                    <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><span class="action-ico ico-visible"></span>visible</li>
+                                        <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                        <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                    </ul>
+                                </div>
+                                <!-- Searchable ico and dropdown -->
+                                <div class="dropdown-holder">
+                                    <span title="Searchable" class="action-ico searchable  dropdown-toggle" data-toggle="dropdown"></span>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><span class="action-ico searchable"></span>I am searchable by this</li>
+                                        <li><span class="action-ico not-searchable"></span>I am NOT searchable by this</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="clear"></div>
 
 
-		<div>
-			<h2>Employment history:</h2>
-			Company name (how long he was there in months calculated)
-			role, leading role|executive role|regular, from, to, project, working language, desc, technologies
-			role, leading role|executive role|regular, from, to, project, working language, desc, , technologies
-
-			Company name (how long he was there in months calculated)
-			role, leading role|executive role|regular, from, to, project, working language, desc, , technologies
-		</div>
+                        </form>
+                    </div>
+                    <!-- /personalForm -->
+                    <div class="clear"></div>
 
 
-		<!-- Site footer -->
-		<div class="footer">
-			<p>&copy; Company 2014</p>
-		</div>
-	</div>
 
-</div>
-<!-- Bootstrap core JavaScript
+
+
+
+
+
+                    <div class="job-history">
+                        <h2>Job history: </h2>
+
+                         <button type="button" class="btn btn-warning btn-add">ADD company to job history</button>
+
+                        <div class="job-history-item">
+                            <h3>Company:  <strong>IBA CZ</strong></h3>
+                            <div class="jh-left">
+                                1.11.2011 - 8.12.2012<br />                                (22 monhts)<br />                                <label>Type:</label> REGULAR
+                                <label>Language:</label> <span class="language cz">CZ</span><br />
+                                <div class="actions">
+                                    <div class="dropdown-holder">
+                                        <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><span class="action-ico ico-visible"></span>visible</li>
+                                            <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                            <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Searchable ico and dropdown -->
+                                    <div class="dropdown-holder">
+                                        <span title="Searchable" class="action-ico searchable  dropdown-toggle" data-toggle="dropdown"></span>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><span class="action-ico searchable"></span>I am searchable by this</li>
+                                            <li><span class="action-ico not-searchable"></span>I am NOT searchable by this</li>
+                                        </ul>
+                                    </div>
+                                    <span title="Delete" class="action-ico ico-delete"></span>
+                                </div>
+                            </div>
+                            <div class="jh-right">
+                                <h4>                                    <strong class="green">Java Developer</strong>  on  <strong>Human resources management and aplicant management system  </strong> project                                </h4>
+                                <p>                                    Doc Hastings, protects and promotes hydropower resources by ending practices that diminish existing                                     hydropower, cutting regulatory red-tape, generating new non-federal funding for new projects and                                     improving transparency. Hydropower is a clean, renewable form of energy that accounts for 70 percent                                     of electricity in Washington state, seven percent of electricity generated in the U.S. and prevents                                     200 million annual metric tons of carbon emissions.                                </p>                                <p>                                    HTML/CSS, Javascript, jQuery, Flash, Python, Ruby, ASP.NET, Wordpress, Drupal, Joomla
+                                </p>
+                            </div>
+
+                            <div class="line"></div>
+
+                            <div class="jh-left">
+                                1.11.2011 - 8.12.2012<br />                                (22 monhts)<br />                                <label>Type:</label> REGULAR
+                                <label>Language:</label> <span class="language cz">CZ</span><br />
+                                <div class="actions">
+                                    <div class="dropdown-holder">
+                                        <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><span class="action-ico ico-visible"></span>visible</li>
+                                            <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                            <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Searchable ico and dropdown -->
+                                    <div class="dropdown-holder">
+                                        <span title="Searchable" class="action-ico searchable  dropdown-toggle" data-toggle="dropdown"></span>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><span class="action-ico searchable"></span>I am searchable by this</li>
+                                            <li><span class="action-ico not-searchable"></span>I am NOT searchable by this</li>
+                                        </ul>
+                                    </div>
+                                    <span title="Delete" class="action-ico ico-delete"></span>
+                                </div>
+                            </div>
+                            <div class="jh-right">
+                                <h4>                                    <strong class="green">Java Developer</strong>  on  <strong>Aplicant management system  </strong> project                                </h4>
+                                <p>                                    Hydropower is a clean, renewable form of energy that accounts for 70 percent                                     of electricity in Washington state, seven percent of electricity generated in the U.S. and prevents                                     200 million annual metric tons of carbon emissions.                                </p>                                <p>                                    PHP, Nette, Flash, Python, Ruby, ASP.NET, Wordpress, Drupal, Joomla
+                                </p>
+                            </div>
+                            <div class="clear"></div>
+
+                            <button type="button" class="btn btn-warning btn-add">ADD Position in Company</button>
+
+                        </div><!-- /job-history-item -->
+
+                        <div class="job-history-item">
+                            <h3>Company:  <strong>Iholding s.r.o.</strong></h3>
+                            <div class="jh-left">
+                                21.2.2010 - 2.11.2011<br />                                (5 monhts)<br />                                <label>Type:</label> REGULAR
+                                <label>Language:</label> <span class="language en">EN</span><br />
+                                <div class="actions">
+                                    <div class="dropdown-holder">
+                                        <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><span class="action-ico ico-visible"></span>visible</li>
+                                            <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                            <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Searchable ico and dropdown -->
+                                    <div class="dropdown-holder">
+                                        <span title="Searchable" class="action-ico searchable  dropdown-toggle" data-toggle="dropdown"></span>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><span class="action-ico searchable"></span>I am searchable by this</li>
+                                            <li><span class="action-ico not-searchable"></span>I am NOT searchable by this</li>
+                                        </ul>
+                                    </div>
+                                    <span title="Delete" class="action-ico ico-delete"></span>
+                                </div>
+                            </div>
+                            <div class="jh-right">
+                                <h4>                                    <strong class="green">HTML Coder</strong>  on  <strong>Web developing</strong> project                                </h4>
+                                <p>                                    Washington state, seven percent of electricity generated in the U.S. and prevents                                     200 million annual metric tons of carbon emissions.                                </p>                                <p>                                    HTML/CSS, Javascript, jQuery
+                                </p>
+                            </div>
+
+                            <div class="clear"></div>
+
+
+                            <button type="button" class="btn btn-warning btn-add">ADD Position in Company</button>
+
+                        </div><!-- /job-history-item -->
+
+
+
+
+                    </div>
+                    <!-- /job-history -->
+
+                </div>
+                <div class="rightPanel">
+
+
+                    <button type="button" class="btn btn-success btn-export"><span class="glyphicon glyphicon-export"></span> Export profile as CV</button>
+
+
+
+                    <h2>Education:</h2>
+                    <div class="rightpanel-item">
+                        <span class="nowrap">Mgr.</span>
+                        <span class="nowrap">Informatics systems</span>
+                        <span class="nowrap">Masaryk university</span>
+                        <span class="nowrap">Brno</span>
+                        <span class="language cz">CZ</span>
+
+                        <div class="actions">
+                            <div class="dropdown-holder">
+                                <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><span class="action-ico ico-visible"></span>visible</li>
+                                    <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                    <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                </ul>
+                            </div>
+                            <!-- Searchable ico and dropdown -->
+                            <div class="dropdown-holder">
+                                <span title="Searchable" class="action-ico searchable  dropdown-toggle" data-toggle="dropdown"></span>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><span class="action-ico searchable"></span>I am searchable by this</li>
+                                    <li><span class="action-ico not-searchable"></span>I am NOT searchable by this</li>
+                                </ul>
+                            </div>
+                            <span title="Delete" class="action-ico ico-delete"></span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <!-- /rightpanel-item-->
+
+                    <div class="rightpanel-item">
+                        <span class="nowrap">Bc.</span>
+                        <span class="nowrap">Mathematics</span>
+                        <span class="nowrap">Masaryk university</span>
+                        <span class="nowrap">Brno</span>
+                        <span class="language cz">CZ</span>
+
+                        <div class="actions">
+                            <div class="dropdown-holder">
+                                <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><span class="action-ico ico-visible"></span>visible</li>
+                                    <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                    <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                </ul>
+                            </div>
+                            <!-- Searchable ico and dropdown -->
+                            <div class="dropdown-holder">
+                                <span title="Searchable" class="action-ico searchable  dropdown-toggle" data-toggle="dropdown"></span>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><span class="action-ico searchable"></span>I am searchable by this</li>
+                                    <li><span class="action-ico not-searchable"></span>I am NOT searchable by this</li>
+                                </ul>
+                            </div>
+                            <span title="Delete" class="action-ico ico-delete"></span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <!-- /rightpanel-item-->
+
+                    <div class="rightpanel-item">
+                        <span class="nowrap">High school</span>
+                        <span class="nowrap">Idustrial school</span>
+                        <span class="nowrap">Střední průmyslová škola</span>
+                        <span class="nowrap">Zlín</span>
+                        <span class="language cz">CZ</span>
+
+                        <div class="actions">
+                            <div class="dropdown-holder">
+                                <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><span class="action-ico ico-visible"></span>visible</li>
+                                    <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                    <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                </ul>
+                            </div>
+                            <!-- Searchable ico and dropdown -->
+                            <div class="dropdown-holder">
+                                <span title="Searchable" class="action-ico searchable  dropdown-toggle" data-toggle="dropdown"></span>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><span class="action-ico searchable"></span>I am searchable by this</li>
+                                    <li><span class="action-ico not-searchable"></span>I am NOT searchable by this</li>
+                                </ul>
+                            </div>
+                            <span title="Delete" class="action-ico ico-delete"></span>
+                        </div>
+                        <div class="clear"></div>
+                    </div><!-- /rightpanel-item-->
+
+                    <button type="button" class="btn btn-warning btn-add">Add education</button>
+
+
+
+
+                    <h2>Languages:</h2>
+
+                    <div class="rightpanel-item">
+                        <span class="language en"> English</span>
+                        <div class="actions">
+                            <div class="dropdown-holder">
+                                <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><span class="action-ico ico-visible"></span>visible</li>
+                                    <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                    <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                </ul>
+                            </div>
+                            <!-- Searchable ico and dropdown -->
+                            <div class="dropdown-holder">
+                                <span title="Searchable" class="action-ico searchable  dropdown-toggle" data-toggle="dropdown"></span>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><span class="action-ico searchable"></span>I am searchable by this</li>
+                                    <li><span class="action-ico not-searchable"></span>I am NOT searchable by this</li>
+                                </ul>
+                            </div>
+                            <span title="Delete" class="action-ico ico-delete"></span>
+                        </div>
+                        <div class="clear"></div>
+                    </div><!-- /rightpanel-item-->
+
+                    <div class="rightpanel-item">
+                        <span class="language cz"> Czech</span>
+                        <div class="actions">
+                            <div class="dropdown-holder">
+                                <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><span class="action-ico ico-visible"></span>visible</li>
+                                    <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                    <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                </ul>
+                            </div>
+                            <!-- Searchable ico and dropdown -->
+                            <div class="dropdown-holder">
+                                <span title="Searchable" class="action-ico searchable  dropdown-toggle" data-toggle="dropdown"></span>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><span class="action-ico searchable"></span>I am searchable by this</li>
+                                    <li><span class="action-ico not-searchable"></span>I am NOT searchable by this</li>
+                                </ul>
+                            </div>
+                            <span title="Delete" class="action-ico ico-delete"></span>
+                        </div>
+                        <div class="clear"></div>
+                    </div><!-- /rightpanel-item-->
+
+                    <button type="button" class="btn btn-warning btn-add">Add language</button>
+
+
+
+
+                    <h2>Contacts:</h2>
+
+                    <div class="rightpanel-item">
+                        <span class="contact"><span class="ico skype"></span> tlachynek</span>
+                        <div class="actions">
+                            <div class="dropdown-holder">
+                                <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><span class="action-ico ico-visible"></span>visible</li>
+                                    <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                    <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                </ul>
+                            </div>
+                            
+                            <span title="Delete" class="action-ico ico-delete"></span>
+                        </div>
+                        <div class="clear"></div>
+                    </div><!-- /rightpanel-item-->
+
+                    <div class="rightpanel-item">
+                        <span class="contact"><span class="ico email"></span> tlachy@seznam.cz</span>
+                        <div class="actions">
+                            <div class="dropdown-holder">
+                                <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><span class="action-ico ico-visible"></span>visible</li>
+                                    <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                    <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                </ul>
+                            </div>
+                            
+                            <span title="Delete" class="action-ico ico-delete"></span>
+                        </div>
+                        <div class="clear"></div>
+                    </div><!-- /rightpanel-item-->
+
+                    <div class="rightpanel-item">
+                        <span class="contact"><span class="ico email"></span> martin.tlachac@gmail.com</span>
+                        <div class="actions">
+                            <div class="dropdown-holder">
+                                <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><span class="action-ico ico-visible"></span>visible</li>
+                                    <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                    <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                </ul>
+                            </div>
+                            
+                            <span title="Delete" class="action-ico ico-delete"></span>
+                        </div>
+                        <div class="clear"></div>
+                    </div><!-- /rightpanel-item-->
+
+                    <div class="rightpanel-item">
+                        <span class="contact"><span class="ico phone"></span> +420 774 111 233</span>
+                        <div class="actions">
+                            <div class="dropdown-holder">
+                                <span title="Visible" class="action-ico ico-visible dropdown-toggle" data-toggle="dropdown"></span>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><span class="action-ico ico-visible"></span>visible</li>
+                                    <li><span class="action-ico partial-visible"></span>visible in interviews</li>
+                                    <li><span class="action-ico ico-invisible"></span>invisible</li>
+                                </ul>
+                            </div>
+                            
+                            <span title="Delete" class="action-ico ico-delete"></span>
+                        </div>
+                        <div class="clear"></div>
+                    </div><!-- /rightpanel-item-->
+
+                    <button type="button" class="btn btn-warning btn-add">Add contact</button>
+
+                </div>
+
+                <div class="clear"></div>
+
+                <!-- Site footer -->
+                <div class="footer">
+                    <p>&copy; Company 2014</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Bootstrap core JavaScript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+        <!-- Placed at the end of the document so the pages load faster -->
 </body>
 </html>

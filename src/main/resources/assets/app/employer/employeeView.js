@@ -103,7 +103,7 @@ var InterviewsController = function ($scope, $modal, $log) {
         interviewId: 5,
         interviewName: 'Java Developer',
         interviewDesc: 'We are looking for senior java dev with spring and wicket',
-        phases: ['application', 'CV review', 'Java test', 'Skype interview', 'Face-to-Face interview', 'Job offer', 'Offer accepted'],
+        phases: [{ name: 'application', status: 'done' }, { name: 'CV review', status: 'active' }, { name: 'Java test', status: 'active' }, { name: 'Skype interview', status: 'active' }, { name: 'Face-to-Face interview', status: 'active' }, { name: 'Job offer', status: 'unactive' }, { name: 'Offer accepted', status: 'unactive' }],
         startDate: "14.6.2014",
         endDate: "29.6.2014",
         postDate: "12.6.2014",
@@ -114,15 +114,15 @@ var InterviewsController = function ($scope, $modal, $log) {
 
     $scope.positionOfGroupInPhase = {};
 
-    var a1 = { name: "Radek Kopecký", interviewId: 5, personId: 1, interviewPhase: 6 };
-    var a2 = { name: "Tomáš Šmíd", interviewId: 5, personId: 2, interviewPhase: 6 };
-    var a3 = { name: "Jan Stehlík", interviewId: 5, personId: 3, interviewPhase: 6 };
-    var a4 = { name: "Tomáš Malý", interviewId: 5, personId: 4, interviewPhase: 6 };
+    var a1 = { name: "Radek Kopecký", interviewId: 5, personId: 1, interviewPhase: 5 };
+    var a2 = { name: "Tomáš Šmíd", interviewId: 5, personId: 2, interviewPhase:5 };
+    var a3 = { name: "Jan Stehlík", interviewId: 5, personId: 3, interviewPhase: 5 };
+    var a4 = { name: "Tomáš Malý", interviewId: 5, personId: 4, interviewPhase: 5 };
     var a5 = { name: "František Horáček", interviewId: 5, personId: 5, interviewPhase: 5 };
     var a6 = { name: "Natálie Levá", interviewId: 5, personId: 6, interviewPhase: 4 };
-    var a7 = { name: "Helena Vlachová", interviewId: 5, personId: 7, interviewPhase: 1 };
-    var a8 = { name: "Ondřej Rohlík", interviewId: 5, personId: 8, interviewPhase: 1 };
-    var a9 = { name: "Vlasta Handlová", interviewId: 5, personId: 9, interviewPhase: 1 };
+    var a7 = { name: "Helena Vlachová", interviewId: 5, personId: 7, interviewPhase: 2 };
+    var a8 = { name: "Ondřej Rohlík", interviewId: 5, personId: 8, interviewPhase: 2 };
+    var a9 = { name: "Vlasta Handlová", interviewId: 5, personId: 9, interviewPhase: 2 };
 
     var applicants = [];
     applicants.push(a1);
